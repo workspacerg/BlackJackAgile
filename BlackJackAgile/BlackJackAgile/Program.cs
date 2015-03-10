@@ -15,7 +15,8 @@ namespace BlackJackAgile
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            ImageSpriteGenerator.getInstance().Load();
+            Application.Run(new MainForm());
         }
     }
 }

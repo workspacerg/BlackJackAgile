@@ -1,0 +1,7 @@
+C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\bin\Debug\BlackJackAgile.exe
+C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\bin\Debug\BlackJackAgile.pdb
+C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.Properties.Resources.resources
+C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.csproj.GenerateResource.Cache
+C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.exe
+C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.pdb
+C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.MainForm.resources
