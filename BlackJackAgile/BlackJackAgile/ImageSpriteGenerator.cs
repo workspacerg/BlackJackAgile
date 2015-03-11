@@ -22,6 +22,8 @@ namespace BlackJackAgile
             set;
         }
 
+        public Card hideCard { get; set; }
+
         public static ImageSpriteGenerator getInstance()
         {
             if (INSTANCE == null)
@@ -36,15 +38,23 @@ namespace BlackJackAgile
             Bitmap bmpImage = new Bitmap(Resources.cards);
             var height = bmpImage.Height / 5;
             var width = bmpImage.Width / 13;
-            for (int i = 0; i < 13; i++)
+            int i, j;
+            for (i = 0; i < 4; i++)
             {
-                for (int j = 0; j < 4; j++)
+                for (j = 0; j < 13; j++)
                 {
-                    var rectangle = new Rectangle(i * width, j * height, width, height);
-                    Bitmap bmpCrop = bmpImage.Clone(rectangle, bmpImage.PixelFormat);
-                    cardsGame.Add(new Card(i > 9 ? 10 : i + 1, bmpCrop));
+                    
+                    cardsGame.Add(GetCard(i,j,width,height,bmpImage));
                 }
             }
+
+            hideCard = GetCard(i,0,width,height,bmpImage);
+        }
+
+        private Card GetCard(int i, int j, int width, int height,Bitmap bmpImage) {
+            var rectangle = new Rectangle(j * width, i * height, width, height);
+            Bitmap bmpCrop = bmpImage.Clone(rectangle, bmpImage.PixelFormat);
+            return new Card(j > 9 ? 10 : j + 1, bmpCrop);
         }
     }
 }

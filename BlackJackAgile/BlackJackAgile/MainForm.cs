@@ -15,6 +15,10 @@ namespace BlackJackAgile
 
         private MainGame mainGame;
 
+        private static int heightPlayer;
+
+        private static int heightCroupier;
+
         public MainForm()
         {
             InitializeComponent();
@@ -22,9 +26,24 @@ namespace BlackJackAgile
             mainGame = new MainGame();
             textBoxMise.Text = string.Format("{0}€", mainGame.GeneralBet);
             textBox_Account.Text = string.Format("{0}€", currentPlayer.MyBet);
+            heightPlayer = 2 * (this.Height / 3);
+            heightCroupier = this.Height / 3;
         }
 
-        private void PickCard()
+        private void PickCardCroupier(bool isVisible)
+        {
+            var animator = ImageSpriteGenerator.getInstance();
+            var card = animator.cardsGame[mainGame.GetIndex()];
+            mainGame.CardsGame.Add(card);
+            this.Controls.Add(new PictureBox()
+            {
+                Width = card.Image.Width,
+                Height = card.Image.Height,
+                Image = isVisible ? card.Image : animator.hideCard.Image,
+                Location = new Point(this.Width / 4 + (mainGame.CardsGame.Count * 40), heightCroupier)
+            });
+        }
+        private void PickCardPlayer()
         {
             var animator = ImageSpriteGenerator.getInstance();
             var card = animator.cardsGame[mainGame.GetIndex()];
@@ -34,16 +53,17 @@ namespace BlackJackAgile
                 Width = card.Image.Width,
                 Height = card.Image.Height,
                 Image = card.Image,
-                Location = new Point(this.Width / 4 + (currentPlayer.MyCards.Count * 40), 2 * (this.Height / 3))
+                Location = new Point(this.Width / 4 + (currentPlayer.MyCards.Count * 40), heightPlayer)
             });
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PickCard();
+            PickCardPlayer();
         }
 
-        private void MAJ() {
+        private void MAJ()
+        {
             textBoxMise.Text = string.Format("{0}€", mainGame.GeneralBet);
             textBox_Account.Text = string.Format("{0}€", currentPlayer.MyBet);
         }
@@ -59,9 +79,11 @@ namespace BlackJackAgile
             mainGame.GeneralBet += 20;
             this.button_bet.Visible = false;
             this.button_pick.Visible = true;
+            bool firstCard = true;
             for (int i = 0; i < 2; i++)
             {
-                PickCard();
+                PickCardPlayer();
+                PickCardCroupier(firstCard = !firstCard);
             }
             MAJ();
         }

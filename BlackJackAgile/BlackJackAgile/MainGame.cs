@@ -13,8 +13,11 @@ namespace BlackJackAgile
 
         private List<int> indexUsed { get; set; }
 
+        public List<Card> CardsGame { get; set; }
+
         public MainGame() {
             indexUsed = new List<int>();
+            CardsGame = new List<Card>();
         }
 
         public void ResetGame() {
