@@ -73,12 +73,13 @@ namespace BlackJackAgile
         {
             var animator = ImageSpriteGenerator.getInstance();
             var card = animator.cardsGame[mainGame.GetIndex()];
+            card.Visible = isVisible;
             mainGame.CardsGame.Add(card);
             this.Controls.Add(new PictureBox()
             {
                 Width = card.Image.Width,
                 Height = card.Image.Height,
-                Image = isVisible ? card.Image : animator.hideCard.Image,
+                Image = card.Visible ? card.Image : animator.hideCard.Image,
                 Location = new Point(this.Width / 4 + (mainGame.CardsGame.Count * 40), heightCroupier)
             });
         }
