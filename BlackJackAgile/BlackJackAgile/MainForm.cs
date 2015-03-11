@@ -22,12 +22,22 @@ namespace BlackJackAgile
         public MainForm()
         {
             InitializeComponent();
+            this.SetStyle(ControlStyles.DoubleBuffer |
+            ControlStyles.UserPaint |
+            ControlStyles.AllPaintingInWmPaint | ControlStyles.ResizeRedraw,
+            true);
+
+            InitGame();
+        }
+
+        private void InitGame()
+        {
+            heightPlayer = 3 * (this.Height / 6);
+            heightCroupier = this.Height / 3;
             currentPlayer = new Player();
             mainGame = new MainGame();
             textBoxMise.Text = string.Format("{0}€", mainGame.GeneralBet);
             textBox_Account.Text = string.Format("{0}€", currentPlayer.MyBet);
-            heightPlayer = 3 * (this.Height / 5);
-            heightCroupier = this.Height / 3;
             InitEventsChips();
         }
 
@@ -46,7 +56,7 @@ namespace BlackJackAgile
             {
                 if (currentPlayer.MyBet < value)
                 {
-                    MessageBox.Show(String.Format("Vous n'avez pas assez d'argent pour miser {0}€",value));
+                    MessageBox.Show(String.Format("Vous n'avez pas assez d'argent pour miser {0}€", value));
                     return;
                 }
                 currentPlayer.MyBet -= value;
@@ -54,8 +64,9 @@ namespace BlackJackAgile
             }
             else
             {
-                if (mainGame.GeneralBet < value) {
-                    MessageBox.Show(String.Format("Vous ne pouvez pas récupérer {0}€",value));
+                if (mainGame.GeneralBet < value)
+                {
+                    MessageBox.Show(String.Format("Vous ne pouvez pas récupérer {0}€", value));
                     return;
                 }
                 currentPlayer.MyBet += value;
@@ -72,10 +83,12 @@ namespace BlackJackAgile
         private void PickCardCroupier(bool isVisible)
         {
             var animator = ImageSpriteGenerator.getInstance();
-            var card = animator.cardsGame[mainGame.GetIndex()];
+            int idx = mainGame.GetIndex();
+            var card = animator.cardsGame[idx];
             mainGame.Cards.Add(card);
             this.Controls.Add(new PictureBox()
             {
+                Name = string.Format("Croupier_{0}", idx),
                 Width = card.Image.Width,
                 Height = card.Image.Height,
                 Image = isVisible ? card.Image : animator.hideCard.Image,
@@ -89,11 +102,13 @@ namespace BlackJackAgile
         private void PickCardPlayer()
         {
             var animator = ImageSpriteGenerator.getInstance();
-            var card = animator.cardsGame[mainGame.GetIndex()];
+            int idx = mainGame.GetIndex();
+            var card = animator.cardsGame[idx];
             currentPlayer.Cards.Add(card);
 
             this.Controls.Add(new PictureBox()
             {
+                Name = string.Format("Player_{0}", idx),
                 Width = card.Image.Width,
                 Height = card.Image.Height,
                 Image = card.Image,
@@ -139,12 +154,6 @@ namespace BlackJackAgile
                 PickCardPlayer();
                 PickCardCroupier(firstCard = !firstCard);
             }
-        }
-
-        private void MainForm_Resize(object sender, EventArgs e)
-        {
-            heightPlayer = 3 * (this.Height / 5);
-            heightCroupier = this.Height / 3;
         }
     }
 }

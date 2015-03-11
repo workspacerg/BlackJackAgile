@@ -52,7 +52,7 @@
             this.button_pick.FlatAppearance.BorderSize = 0;
             this.button_pick.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_pick.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_pick.Location = new System.Drawing.Point(70, 207);
+            this.button_pick.Location = new System.Drawing.Point(70, 223);
             this.button_pick.Name = "button_pick";
             this.button_pick.Size = new System.Drawing.Size(102, 30);
             this.button_pick.TabIndex = 0;
@@ -70,7 +70,7 @@
             this.textBoxMise.Name = "textBoxMise";
             this.textBoxMise.ReadOnly = true;
             this.textBoxMise.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMise.TabIndex = 3;
+            this.textBoxMise.TabIndex = 8;
             this.textBoxMise.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
@@ -92,7 +92,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(445, 285);
+            this.label2.Location = new System.Drawing.Point(445, 317);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 5;
@@ -104,7 +104,7 @@
             this.textBox_Account.BackColor = System.Drawing.SystemColors.InfoText;
             this.textBox_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Account.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.textBox_Account.Location = new System.Drawing.Point(535, 282);
+            this.textBox_Account.Location = new System.Drawing.Point(535, 314);
             this.textBox_Account.Name = "textBox_Account";
             this.textBox_Account.ReadOnly = true;
             this.textBox_Account.Size = new System.Drawing.Size(100, 20);
@@ -132,7 +132,7 @@
             this.pictureBox_j50.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_j50.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_j50.Image = global::BlackJackAgile.Properties.Resources.jeton50;
-            this.pictureBox_j50.Location = new System.Drawing.Point(363, 260);
+            this.pictureBox_j50.Location = new System.Drawing.Point(363, 292);
             this.pictureBox_j50.Name = "pictureBox_j50";
             this.pictureBox_j50.Size = new System.Drawing.Size(44, 38);
             this.pictureBox_j50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -145,7 +145,7 @@
             this.pictureBox_j10.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_j10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_j10.Image = global::BlackJackAgile.Properties.Resources.jeton10;
-            this.pictureBox_j10.Location = new System.Drawing.Point(241, 260);
+            this.pictureBox_j10.Location = new System.Drawing.Point(241, 292);
             this.pictureBox_j10.Name = "pictureBox_j10";
             this.pictureBox_j10.Size = new System.Drawing.Size(44, 38);
             this.pictureBox_j10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -158,7 +158,7 @@
             this.pictureBox_j25.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_j25.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_j25.Image = global::BlackJackAgile.Properties.Resources.jeton25;
-            this.pictureBox_j25.Location = new System.Drawing.Point(301, 260);
+            this.pictureBox_j25.Location = new System.Drawing.Point(301, 292);
             this.pictureBox_j25.Name = "pictureBox_j25";
             this.pictureBox_j25.Size = new System.Drawing.Size(44, 38);
             this.pictureBox_j25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -171,7 +171,7 @@
             this.pictureBox_j5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_j5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_j5.Image = global::BlackJackAgile.Properties.Resources.jeton5;
-            this.pictureBox_j5.Location = new System.Drawing.Point(179, 260);
+            this.pictureBox_j5.Location = new System.Drawing.Point(179, 292);
             this.pictureBox_j5.Name = "pictureBox_j5";
             this.pictureBox_j5.Size = new System.Drawing.Size(42, 38);
             this.pictureBox_j5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -184,7 +184,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BlackJackAgile.Properties.Resources.table;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(647, 310);
+            this.ClientSize = new System.Drawing.Size(647, 342);
             this.Controls.Add(this.pictureBox_j5);
             this.Controls.Add(this.pictureBox_j25);
             this.Controls.Add(this.pictureBox_j10);
@@ -195,10 +195,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBoxMise);
             this.Controls.Add(this.button_pick);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Resize += new System.EventHandler(this.MainForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j25)).EndInit();
