@@ -36,14 +36,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_Account = new System.Windows.Forms.TextBox();
             this.button_bet = new System.Windows.Forms.Button();
-            this.pictureBox_j5 = new System.Windows.Forms.PictureBox();
             this.pictureBox_j50 = new System.Windows.Forms.PictureBox();
             this.pictureBox_j10 = new System.Windows.Forms.PictureBox();
             this.pictureBox_j25 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j5)).BeginInit();
+            this.pictureBox_j5 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j25)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j5)).BeginInit();
             this.SuspendLayout();
             // 
             // button_pick
@@ -135,15 +135,6 @@
             this.button_bet.UseVisualStyleBackColor = false;
             this.button_bet.Click += new System.EventHandler(this.button_bet_Click);
             // 
-            // pictureBox_j5
-            // 
-            this.pictureBox_j5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox_j5.Location = new System.Drawing.Point(180, 260);
-            this.pictureBox_j5.Name = "pictureBox_j5";
-            this.pictureBox_j5.Size = new System.Drawing.Size(44, 38);
-            this.pictureBox_j5.TabIndex = 8;
-            this.pictureBox_j5.TabStop = false;
-            // 
             // pictureBox_j50
             // 
             this.pictureBox_j50.BackColor = System.Drawing.Color.Transparent;
@@ -156,6 +147,7 @@
             // pictureBox_j10
             // 
             this.pictureBox_j10.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_j10.Image = global::BlackJackAgile.Properties.Resources.jeton10;
             this.pictureBox_j10.Location = new System.Drawing.Point(241, 260);
             this.pictureBox_j10.Name = "pictureBox_j10";
             this.pictureBox_j10.Size = new System.Drawing.Size(44, 38);
@@ -171,6 +163,15 @@
             this.pictureBox_j25.TabIndex = 11;
             this.pictureBox_j25.TabStop = false;
             // 
+            // pictureBox_j5
+            // 
+            this.pictureBox_j5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_j5.Location = new System.Drawing.Point(179, 260);
+            this.pictureBox_j5.Name = "pictureBox_j5";
+            this.pictureBox_j5.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox_j5.TabIndex = 12;
+            this.pictureBox_j5.TabStop = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -178,10 +179,10 @@
             this.BackgroundImage = global::BlackJackAgile.Properties.Resources.table;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(647, 310);
+            this.Controls.Add(this.pictureBox_j5);
             this.Controls.Add(this.pictureBox_j25);
             this.Controls.Add(this.pictureBox_j10);
             this.Controls.Add(this.pictureBox_j50);
-            this.Controls.Add(this.pictureBox_j5);
             this.Controls.Add(this.button_bet);
             this.Controls.Add(this.textBox_Account);
             this.Controls.Add(this.label2);
@@ -193,10 +194,10 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j25)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j5)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -211,10 +212,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_Account;
         private System.Windows.Forms.Button button_bet;
-        private System.Windows.Forms.PictureBox pictureBox_j5;
         private System.Windows.Forms.PictureBox pictureBox_j50;
         private System.Windows.Forms.PictureBox pictureBox_j10;
         private System.Windows.Forms.PictureBox pictureBox_j25;
+        private System.Windows.Forms.PictureBox pictureBox_j5;
     }
 }
 
