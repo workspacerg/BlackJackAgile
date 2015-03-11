@@ -5,10 +5,8 @@ using System.Text;
 
 namespace BlackJackAgile
 {
-    public class Player
+    public class Player : Actioner
     {
-        public List<Card> MyCards { get; set; }
-
         public int MyBet
         {
             get;
@@ -18,7 +16,7 @@ namespace BlackJackAgile
         public Player()
             : base()
         {
-            MyCards = new List<Card>();
+            Cards = new List<Card>();
             MyBet = 200;
         }
         
@@ -26,7 +24,7 @@ namespace BlackJackAgile
         	int currentPts = 0;
         	int nbAs = 0;
         	
-        	foreach(Card card in MyCards)
+        	foreach(Card card in Cards)
         	{
         		if(card.Value != 1)
         			currentPts += card.Value;

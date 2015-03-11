@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actioner.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>

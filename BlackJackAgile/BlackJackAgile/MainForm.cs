@@ -73,13 +73,13 @@ namespace BlackJackAgile
         {
             var animator = ImageSpriteGenerator.getInstance();
             var card = animator.cardsGame[mainGame.GetIndex()];
-            mainGame.CardsGame.Add(card);
+            mainGame.Cards.Add(card);
             this.Controls.Add(new PictureBox()
             {
                 Width = card.Image.Width,
                 Height = card.Image.Height,
                 Image = isVisible ? card.Image : animator.hideCard.Image,
-                Location = new Point(this.Width / 4 + (mainGame.CardsGame.Count * 40), heightCroupier)
+                Location = new Point(this.Width / 4 + (mainGame.Cards.Count * 40), heightCroupier)
             });
         }
 
@@ -90,14 +90,14 @@ namespace BlackJackAgile
         {
             var animator = ImageSpriteGenerator.getInstance();
             var card = animator.cardsGame[mainGame.GetIndex()];
-            currentPlayer.MyCards.Add(card);
+            currentPlayer.Cards.Add(card);
 
             this.Controls.Add(new PictureBox()
             {
                 Width = card.Image.Width,
                 Height = card.Image.Height,
                 Image = card.Image,
-                Location = new Point(this.Width / 4 + (currentPlayer.MyCards.Count * 40), heightPlayer)
+                Location = new Point(this.Width / 4 + (currentPlayer.Cards.Count * 40), heightPlayer)
             });
         }
 
@@ -109,7 +109,7 @@ namespace BlackJackAgile
         private void button1_Click(object sender, EventArgs e)
         {
             PickCardPlayer();
-            if (currentPlayer.MyCards.Sum(x => x.Value) >= 21)
+            if (currentPlayer.Cards.Sum(x => x.Value) >= 21)
                 MessageBox.Show("OKLM T'ES A 21 MEC");
         }
 
@@ -119,11 +119,6 @@ namespace BlackJackAgile
             textBox_Account.Text = string.Format("{0}€", currentPlayer.MyBet);
         }
 
-        private void button_close_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         /// <summary>
         /// Donner les cartes au joueur et au croupier
         /// </summary>
@@ -131,6 +126,11 @@ namespace BlackJackAgile
         /// <param name="e"></param>
         private void button_bet_Click(object sender, EventArgs e)
         {
+            if (mainGame.GeneralBet == 0)
+            {
+                MessageBox.Show("Veuillez misez de l'argent avant de lancer la partie");
+                return;
+            }
             this.button_bet.Visible = false;
             this.button_pick.Visible = true;
             bool firstCard = true;
@@ -139,6 +139,12 @@ namespace BlackJackAgile
                 PickCardPlayer();
                 PickCardCroupier(firstCard = !firstCard);
             }
+        }
+
+        private void MainForm_Resize(object sender, EventArgs e)
+        {
+            heightPlayer = 3 * (this.Height / 5);
+            heightCroupier = this.Height / 3;
         }
     }
 }
