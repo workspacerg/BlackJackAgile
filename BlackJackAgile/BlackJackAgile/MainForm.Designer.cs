@@ -127,20 +127,22 @@
             this.button_bet.FlatAppearance.BorderSize = 0;
             this.button_bet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_bet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_bet.Location = new System.Drawing.Point(533, 189);
+            this.button_bet.Location = new System.Drawing.Point(183, 8);
             this.button_bet.Name = "button_bet";
-            this.button_bet.Size = new System.Drawing.Size(102, 30);
+            this.button_bet.Size = new System.Drawing.Size(73, 26);
             this.button_bet.TabIndex = 7;
-            this.button_bet.Text = "Miser (20€)";
+            this.button_bet.Text = "Lancer !";
             this.button_bet.UseVisualStyleBackColor = false;
             this.button_bet.Click += new System.EventHandler(this.button_bet_Click);
             // 
             // pictureBox_j50
             // 
             this.pictureBox_j50.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_j50.Image = global::BlackJackAgile.Properties.Resources.jeton50;
             this.pictureBox_j50.Location = new System.Drawing.Point(363, 260);
             this.pictureBox_j50.Name = "pictureBox_j50";
             this.pictureBox_j50.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox_j50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_j50.TabIndex = 9;
             this.pictureBox_j50.TabStop = false;
             // 
@@ -151,24 +153,29 @@
             this.pictureBox_j10.Location = new System.Drawing.Point(241, 260);
             this.pictureBox_j10.Name = "pictureBox_j10";
             this.pictureBox_j10.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox_j10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_j10.TabIndex = 10;
             this.pictureBox_j10.TabStop = false;
             // 
             // pictureBox_j25
             // 
             this.pictureBox_j25.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_j25.Image = global::BlackJackAgile.Properties.Resources.jeton25;
             this.pictureBox_j25.Location = new System.Drawing.Point(301, 260);
             this.pictureBox_j25.Name = "pictureBox_j25";
             this.pictureBox_j25.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox_j25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_j25.TabIndex = 11;
             this.pictureBox_j25.TabStop = false;
             // 
             // pictureBox_j5
             // 
             this.pictureBox_j5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox_j5.Image = global::BlackJackAgile.Properties.Resources.jeton5;
             this.pictureBox_j5.Location = new System.Drawing.Point(179, 260);
             this.pictureBox_j5.Name = "pictureBox_j5";
-            this.pictureBox_j5.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox_j5.Size = new System.Drawing.Size(42, 38);
+            this.pictureBox_j5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_j5.TabIndex = 12;
             this.pictureBox_j5.TabStop = false;
             // 

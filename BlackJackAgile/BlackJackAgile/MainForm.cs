@@ -26,38 +26,42 @@ namespace BlackJackAgile
             mainGame = new MainGame();
             textBoxMise.Text = string.Format("{0}€", mainGame.GeneralBet);
             textBox_Account.Text = string.Format("{0}€", currentPlayer.MyBet);
-            heightPlayer = 2 * (this.Height / 3);
+            heightPlayer = 3 * (this.Height / 5);
             heightCroupier = this.Height / 3;
             InitEventsChips();
         }
 
-        private void InitEventsChips() {
-            this.pictureBox_j5.Click += (sender, e) => pictureBox_j_Click(sender, e,5);
+        private void InitEventsChips()
+        {
+            this.pictureBox_j5.Click += (sender, e) => pictureBox_j_Click(sender, e, 5);
             this.pictureBox_j10.Click += (sender, e) => pictureBox_j_Click(sender, e, 10);
-            this.pictureBox_j25.Click += (sender, e) => pictureBox_j_Click(sender, e,25);
+            this.pictureBox_j25.Click += (sender, e) => pictureBox_j_Click(sender, e, 25);
             this.pictureBox_j50.Click += (sender, e) => pictureBox_j_Click(sender, e, 50);
         }
 
-        void pictureBox_j_Click(object sender, EventArgs e,int value)
+        void pictureBox_j_Click(object sender, EventArgs e, int value)
         {
+
             if (((MouseEventArgs)e).Button == MouseButtons.Left)
             {
+                if (currentPlayer.MyBet < value)
+                {
+                    MessageBox.Show(String.Format("Vous n'avez pas assez d'argent pour miser {0}€",value));
+                    return;
+                }
                 currentPlayer.MyBet -= value;
                 mainGame.GeneralBet += value;
             }
-            else {
+            else
+            {
+                if (mainGame.GeneralBet < value) {
+                    MessageBox.Show(String.Format("Vous ne pouvez pas récupérer {0}€",value));
+                    return;
+                }
                 currentPlayer.MyBet += value;
                 mainGame.GeneralBet -= value;
             }
 
-            this.button_bet.Visible = false;
-            this.button_pick.Visible = true;
-            bool firstCard = true;
-            for (int i = 0; i < 2; i++)
-            {
-                PickCardPlayer();
-                PickCardCroupier(firstCard = !firstCard);
-            }
             MAJ();
         }
 
@@ -87,8 +91,7 @@ namespace BlackJackAgile
             var animator = ImageSpriteGenerator.getInstance();
             var card = animator.cardsGame[mainGame.GetIndex()];
             currentPlayer.MyCards.Add(card);
-            
-            //MessageBox.Show("Player pts : "+currentPlayer.getPtsPlayer());
+
             this.Controls.Add(new PictureBox()
             {
                 Width = card.Image.Width,
@@ -128,7 +131,14 @@ namespace BlackJackAgile
         /// <param name="e"></param>
         private void button_bet_Click(object sender, EventArgs e)
         {
-            
+            this.button_bet.Visible = false;
+            this.button_pick.Visible = true;
+            bool firstCard = true;
+            for (int i = 0; i < 2; i++)
+            {
+                PickCardPlayer();
+                PickCardCroupier(firstCard = !firstCard);
+            }
         }
     }
 }
