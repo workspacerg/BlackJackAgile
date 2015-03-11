@@ -85,13 +85,15 @@ namespace BlackJackAgile
             var animator = ImageSpriteGenerator.getInstance();
             int idx = mainGame.GetIndex();
             var card = animator.cardsGame[idx];
+            card.Visible = isVisible;
             mainGame.Cards.Add(card);
+
             this.Controls.Add(new PictureBox()
             {
                 Name = string.Format("Croupier_{0}", idx),
                 Width = card.Image.Width,
                 Height = card.Image.Height,
-                Image = isVisible ? card.Image : animator.hideCard.Image,
+                Image = card.Visible ? card.Image : animator.hideCard.Image,
                 Location = new Point(this.Width / 4 + (mainGame.Cards.Count * 40), heightCroupier)
             });
         }
@@ -134,6 +136,11 @@ namespace BlackJackAgile
             textBox_Account.Text = string.Format("{0}€", currentPlayer.MyBet);
         }
 
+        private void button_close_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         /// <summary>
         /// Donner les cartes au joueur et au croupier
         /// </summary>
@@ -141,11 +148,6 @@ namespace BlackJackAgile
         /// <param name="e"></param>
         private void button_bet_Click(object sender, EventArgs e)
         {
-            if (mainGame.GeneralBet == 0)
-            {
-                MessageBox.Show("Veuillez misez de l'argent avant de lancer la partie");
-                return;
-            }
             this.button_bet.Visible = false;
             this.button_pick.Visible = true;
             bool firstCard = true;

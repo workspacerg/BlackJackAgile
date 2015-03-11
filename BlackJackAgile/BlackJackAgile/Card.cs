@@ -9,6 +9,7 @@ namespace BlackJackAgile
     public class Card
     {
         private int value;
+        public bool Visible { get; set; }
 
         private Bitmap image;
 
@@ -22,6 +23,7 @@ namespace BlackJackAgile
         {
             value = _value;
             image = bitmap;
+            Visible = true;
         }
 
         public int Value
