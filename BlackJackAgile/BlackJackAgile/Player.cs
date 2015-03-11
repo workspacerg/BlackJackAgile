@@ -8,6 +8,7 @@ namespace BlackJackAgile
     public class Player
     {
         public List<Card> MyCards { get; set; }
+        public int pts;
 
         public int MyBet
         {
@@ -20,6 +21,7 @@ namespace BlackJackAgile
         {
             MyCards = new List<Card>();
             MyBet = 200;
+            pts = 0;
         }
     }
 }

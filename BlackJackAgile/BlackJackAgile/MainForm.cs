@@ -87,6 +87,8 @@ namespace BlackJackAgile
             var animator = ImageSpriteGenerator.getInstance();
             var card = animator.cardsGame[mainGame.GetIndex()];
             currentPlayer.MyCards.Add(card);
+            currentPlayer.pts += card.Value;
+            MessageBox.Show("Player pts : "+currentPlayer.pts);
             this.Controls.Add(new PictureBox()
             {
                 Width = card.Image.Width,
