@@ -40,6 +40,8 @@ namespace BlackJackAgile
         			currentPts++;
         		else
         			currentPts+=11;
+        		
+        		nbAs --;
         	}
         	
         	return currentPts;
