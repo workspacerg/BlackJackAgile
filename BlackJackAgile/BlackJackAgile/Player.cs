@@ -20,7 +20,29 @@ namespace BlackJackAgile
         {
             MyCards = new List<Card>();
             MyBet = 200;
-            pts = 0;
+        }
+        
+        public int getPtsPlayer(){
+        	int currentPts = 0;
+        	int nbAs = 0;
+        	
+        	foreach(Card card in MyCards)
+        	{
+        		if(card.Value != 1)
+        			currentPts += card.Value;
+        		else
+        			nbAs++;
+        	}
+        	
+        	while(nbAs > 0)
+        	{
+        		if(currentPts+11 >21)
+        			currentPts++;
+        		else
+        			currentPts+=11;
+        	}
+        	
+        	return currentPts;
         }
     }
 }
