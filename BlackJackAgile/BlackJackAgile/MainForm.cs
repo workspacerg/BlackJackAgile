@@ -30,6 +30,10 @@ namespace BlackJackAgile
             heightCroupier = this.Height / 3;
         }
 
+        /// <summary>
+        /// Lorsque le croupier tire une carte
+        /// </summary>
+        /// <param name="isVisible">Indique si la carte est visible ou non</param>
         private void PickCardCroupier(bool isVisible)
         {
             var animator = ImageSpriteGenerator.getInstance();
@@ -43,6 +47,10 @@ namespace BlackJackAgile
                 Location = new Point(this.Width / 4 + (mainGame.CardsGame.Count * 40), heightCroupier)
             });
         }
+
+        /// <summary>
+        /// Lorsque le joueur tire une carte
+        /// </summary>
         private void PickCardPlayer()
         {
             var animator = ImageSpriteGenerator.getInstance();
@@ -57,6 +65,11 @@ namespace BlackJackAgile
             });
         }
 
+        /// <summary>
+        /// Donner Une carte au joueur 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             PickCardPlayer();
@@ -73,6 +86,11 @@ namespace BlackJackAgile
             Application.Exit();
         }
 
+        /// <summary>
+        /// Donner les cartes au joueur et au croupier
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button_bet_Click(object sender, EventArgs e)
         {
             currentPlayer.MyBet -= 20;

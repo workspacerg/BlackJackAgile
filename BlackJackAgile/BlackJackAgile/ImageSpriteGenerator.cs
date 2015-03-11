@@ -39,16 +39,20 @@ namespace BlackJackAgile
             var height = bmpImage.Height / 5;
             var width = bmpImage.Width / 13;
             int i, j;
-            for (i = 0; i < 4; i++)
+
+            for (int y = 0; y < 6; y++)
             {
-                for (j = 0; j < 13; j++)
+                for (i = 0; i < 4; i++)
                 {
-                    
-                    cardsGame.Add(GetCard(i,j,width,height,bmpImage));
+                    for (j = 0; j < 13; j++)
+                    {
+
+                        cardsGame.Add(GetCard(i, j, width, height, bmpImage));
+                    }
                 }
             }
 
-            hideCard = GetCard(i,0,width,height,bmpImage);
+            hideCard = GetCard(4,0,width,height,bmpImage);
         }
 
         private Card GetCard(int i, int j, int width, int height,Bitmap bmpImage) {
