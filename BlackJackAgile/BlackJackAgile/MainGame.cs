@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BlackJackAgile
 {
-    public class MainGame
+    public class MainGame : Actioner
     {
         private static Random rnd = new Random();
 
@@ -13,11 +13,9 @@ namespace BlackJackAgile
 
         private List<int> indexUsed { get; set; }
 
-        public List<Card> CardsGame { get; set; }
-
-        public MainGame() {
+        public MainGame() : base() {
             indexUsed = new List<int>();
-            CardsGame = new List<Card>();
+            Cards = new List<Card>();
         }
 
         public void ResetGame() {

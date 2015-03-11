@@ -34,9 +34,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="nunit.framework">
-      <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -49,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlackJackTests.cs" />
+    <Compile Include="Actioner.cs" />
     <Compile Include="Card.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -75,7 +72,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
