@@ -5,7 +5,6 @@ C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgil
 C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.exe
 C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.pdb
 C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.MainForm.resources
-C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.csprojResolveAssemblyReference.cache
 C:\Users\Romain GABEL\Documents\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.exe
 C:\Users\Romain GABEL\Documents\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.pdb
 C:\Users\Romain GABEL\Documents\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.MainForm.resources

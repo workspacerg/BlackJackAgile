@@ -11,6 +11,12 @@ namespace BlackJackAgile
     {
         private static ImageSpriteGenerator INSTANCE = null;
 
+        private const int NB_PAQUET = 6;
+
+        private const int NB_CARTE_WIDTH = 13;
+
+        private const int NB_CARTE_HEIGHT = 4;
+
         private ImageSpriteGenerator()
         {
             cardsGame = new List<Card>();
@@ -40,11 +46,11 @@ namespace BlackJackAgile
             var width = bmpImage.Width / 13;
             int i, j;
 
-            for (int y = 0; y < 6; y++)
+            for (int y = 0; y < NB_PAQUET; y++)
             {
-                for (i = 0; i < 4; i++)
+                for (i = 0; i < NB_CARTE_HEIGHT; i++)
                 {
-                    for (j = 0; j < 13; j++)
+                    for (j = 0; j < NB_CARTE_WIDTH; j++)
                     {
 
                         cardsGame.Add(GetCard(i, j, width, height, bmpImage));
@@ -52,10 +58,12 @@ namespace BlackJackAgile
                 }
             }
 
-            hideCard = GetCard(4,0,width,height,bmpImage);
+            // Dernière carte de l'image est la carte retournée
+            hideCard = GetCard(NB_CARTE_HEIGHT, 0, width, height, bmpImage);
         }
 
-        private Card GetCard(int i, int j, int width, int height,Bitmap bmpImage) {
+        private Card GetCard(int i, int j, int width, int height, Bitmap bmpImage)
+        {
             var rectangle = new Rectangle(j * width, i * height, width, height);
             Bitmap bmpCrop = bmpImage.Clone(rectangle, bmpImage.PixelFormat);
             return new Card(j > 9 ? 10 : j + 1, bmpCrop);
