@@ -42,7 +42,7 @@ namespace BlackJackAgile
 
         public StatePick CheckSum()
         {
-            var pts = player.getPtsPlayer();
+            var pts = player.GetPoints();
             if (pts > 21) {
                 MessageBox.Show(string.Format("Vous êtes à {0}. Vous avez perdu !",pts));
                 return StatePick.LOSE;

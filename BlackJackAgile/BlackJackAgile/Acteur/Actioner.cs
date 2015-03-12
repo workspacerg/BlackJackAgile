@@ -15,5 +15,31 @@ namespace BlackJackAgile
 
         public abstract void Reset();
 
+        public virtual int GetPoints()
+        {
+            int currentPts = 0;
+            int nbAs = 0;
+
+            foreach (Card card in Cards)
+            {
+                if (card.Value != 1)
+                    currentPts += card.Value;
+                else
+                    nbAs++;
+            }
+
+            while (nbAs > 0)
+            {
+                if (currentPts + 11 > 21)
+                    currentPts++;
+                else
+                    currentPts += 11;
+
+                nbAs--;
+            }
+
+            return currentPts;
+        }
+
     }
 }
