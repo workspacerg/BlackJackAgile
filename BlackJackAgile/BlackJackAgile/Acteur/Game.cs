@@ -12,12 +12,16 @@ namespace BlackJackAgile
 
         public MainGame croupier { get; set; }
 
+        public bool isLaunched { get; set; }
+
         public Game() {
             player = new Player();
             croupier = new MainGame();
         }
 
         public void DoBetOrUnbet(MouseEventArgs e, int value) {
+            if (isLaunched)
+                return;
             if (e.Button == MouseButtons.Left)
             {
                 if (player.MyBet < value)
@@ -70,7 +74,7 @@ namespace BlackJackAgile
         public void ResetCards()
         {
             player.Cards.Clear();
-            croupier.Cards.Clear();
+            croupier.Reset();
         }
     }
 }

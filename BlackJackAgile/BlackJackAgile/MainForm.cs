@@ -117,8 +117,8 @@ namespace BlackJackAgile
             }
             ResetPictureBox();
             game.ResetCards();
-            this.game.croupier.GeneralBet = 0;
             this.button_bet.Visible = true;
+            game.isLaunched = false;
             MAJ();
         }
 
@@ -150,12 +150,15 @@ namespace BlackJackAgile
         /// <param name="e"></param>
         private void button_bet_Click(object sender, EventArgs e)
         {
+            if (game.isLaunched)
+                return;
             if (game.croupier.GeneralBet == 0)
             {
                 MessageBox.Show("Veuillez miser avant de jouer");
                 return;
             }
 
+            game.isLaunched = true;
             this.button_bet.Visible = false;
             this.button_pick.Visible = true;
             bool firstCard = false;
