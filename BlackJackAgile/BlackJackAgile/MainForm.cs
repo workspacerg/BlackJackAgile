@@ -119,6 +119,7 @@ namespace BlackJackAgile
             game.ResetCards();
             this.game.croupier.GeneralBet = 0;
             this.button_bet.Visible = true;
+            this.button_pick.Visible = false;
             MAJ();
         }
 
