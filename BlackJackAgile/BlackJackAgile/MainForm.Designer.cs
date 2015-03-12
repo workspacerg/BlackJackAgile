@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.button_pick = new System.Windows.Forms.Button();
-            this.textBoxMise = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_Account = new System.Windows.Forms.TextBox();
             this.button_bet = new System.Windows.Forms.Button();
             this.pictureBox_j50 = new System.Windows.Forms.PictureBox();
             this.pictureBox_j10 = new System.Windows.Forms.PictureBox();
@@ -65,18 +63,6 @@
             this.button_pick.Visible = false;
             this.button_pick.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBoxMise
-            // 
-            this.textBoxMise.BackColor = System.Drawing.SystemColors.InfoText;
-            this.textBoxMise.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxMise.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.textBoxMise.Location = new System.Drawing.Point(488, 12);
-            this.textBoxMise.Name = "textBoxMise";
-            this.textBoxMise.ReadOnly = true;
-            this.textBoxMise.Size = new System.Drawing.Size(100, 20);
-            this.textBoxMise.TabIndex = 8;
-            this.textBoxMise.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -101,21 +87,6 @@
             this.label2.Size = new System.Drawing.Size(93, 16);
             this.label2.TabIndex = 5;
             this.label2.Text = "Mon compte :";
-            // 
-            // textBox_Account
-            // 
-            this.textBox_Account.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_Account.BackColor = System.Drawing.SystemColors.InfoText;
-            this.textBox_Account.Enabled = false;
-            this.textBox_Account.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_Account.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.textBox_Account.Location = new System.Drawing.Point(382, 12);
-            this.textBox_Account.Name = "textBox_Account";
-            this.textBox_Account.ReadOnly = true;
-            this.textBox_Account.Size = new System.Drawing.Size(100, 20);
-            this.textBox_Account.TabIndex = 6;
-            this.textBox_Account.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox_Account.TextChanged += new System.EventHandler(this.textBox_Account_TextChanged);
             // 
             // button_bet
             // 
@@ -244,10 +215,8 @@
             this.Controls.Add(this.pictureBox_j10);
             this.Controls.Add(this.pictureBox_j50);
             this.Controls.Add(this.button_bet);
-            this.Controls.Add(this.textBox_Account);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxMise);
             this.Controls.Add(this.button_pick);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
@@ -266,10 +235,8 @@
         #endregion
 
         private System.Windows.Forms.Button button_pick;
-        private System.Windows.Forms.TextBox textBoxMise;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox_Account;
         private System.Windows.Forms.Button button_bet;
         private System.Windows.Forms.PictureBox pictureBox_j50;
         private System.Windows.Forms.PictureBox pictureBox_j10;

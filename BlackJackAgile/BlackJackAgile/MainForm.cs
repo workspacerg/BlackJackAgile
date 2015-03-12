@@ -33,8 +33,8 @@ namespace BlackJackAgile
             heightPlayer = 3 * (this.Height / 6);
             heightCroupier = this.Height / 3;
             game = new Game();
-            textBoxMise.Text = string.Format("{0}€", game.croupier.GeneralBet);
-            textBox_Account.Text = string.Format("{0}€", game.player.MyBet);
+            label_mise.Text = string.Format("{0}€", game.croupier.GeneralBet);
+            label_compte.Text = string.Format("{0}€", game.player.MyBet);
             InitEventsChips();
         }
 
@@ -139,8 +139,8 @@ namespace BlackJackAgile
 
         private void MAJ()
         {
-            textBoxMise.Text = string.Format("{0}€", game.croupier.GeneralBet);
-            textBox_Account.Text = string.Format("{0}€", game.player.MyBet);
+            label_mise.Text = string.Format("{0}€", game.croupier.GeneralBet);
+            label_compte.Text = string.Format("{0}€", game.player.MyBet);
         }
 
         private void button_close_Click(object sender, EventArgs e)
