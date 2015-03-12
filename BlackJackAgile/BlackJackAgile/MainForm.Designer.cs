@@ -194,6 +194,7 @@
             this.buttonReste.Text = "Je reste !";
             this.buttonReste.UseVisualStyleBackColor = false;
             this.buttonReste.Visible = false;
+            this.buttonReste.Click += new System.EventHandler(this.buttonReste_Click);
             // 
             // MainForm
             // 
