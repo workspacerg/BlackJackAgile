@@ -102,6 +102,10 @@ namespace BlackJackAgile
         private void button1_Click(object sender, EventArgs e)
         {
             PickCardPlayer();
+            GetState();
+        }
+
+        private void GetState() {
             var checkSum = game.CheckSum();
             if (checkSum.Equals(StatePick.LOSE)) // Fin du jeu, joueur a perdu
                 RestartGame();
@@ -168,6 +172,7 @@ namespace BlackJackAgile
                 PickCardPlayer();
                 PickCardCroupier(firstCard = !firstCard);
             }
+            GetState();
         }
 
         private void buttonReste_Click(object sender, EventArgs e)
