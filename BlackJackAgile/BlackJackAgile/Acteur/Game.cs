@@ -98,7 +98,6 @@ namespace BlackJackAgile
         public void LaunchEndGame()
         {
             BackCard(form);
-
         }
 
         public void PickCardPlayer()
