@@ -78,6 +78,7 @@ namespace BlackJackAgile
         private void button1_Click(object sender, EventArgs e)
         {
             PickCardPlayer();
+            this.button_double.Visible = false; // Dès qu'on tire une carte on peut plus doubler
             GetState();
         }
 
