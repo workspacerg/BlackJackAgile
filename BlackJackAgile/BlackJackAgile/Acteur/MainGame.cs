@@ -20,6 +20,7 @@ namespace BlackJackAgile
 
         public override void Reset() {
             GeneralBet = 0;
+            Cards.Clear();
             indexUsed.Clear();
         }
 
