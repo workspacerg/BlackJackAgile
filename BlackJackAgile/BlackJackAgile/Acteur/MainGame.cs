@@ -9,8 +9,6 @@ namespace BlackJackAgile
     {
         private static Random rnd = new Random();
 
-        public int GeneralBet { get; set; }
-
         private List<int> indexUsed { get; set; }
 
         public MainGame() : base() {
@@ -19,7 +17,6 @@ namespace BlackJackAgile
         }
 
         public override void Reset() {
-            GeneralBet = 0;
             Cards.Clear();
             indexUsed.Clear();
         }

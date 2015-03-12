@@ -20,6 +20,8 @@ namespace BlackJackAgile
 
         private Timer timer;
 
+        private State? finalState;
+
         private MainForm form;
 
         private int heightCroupier;
@@ -40,25 +42,30 @@ namespace BlackJackAgile
 
         void timer_Tick(object sender, EventArgs e)
         {
-            PickCardCroupier(true);
-            if (croupier.GetPoints() > 21)
+            if (!isLaunched)
             {
-                MessageBox.Show("Le croupier a dépassé 21, vous avez gagné");
                 timer.Stop();
+                return;
+            }
+            PickCardCroupier(true);
+            if (!Analyze())
+            {
+                timer.Stop();
+                MakeResults();
             }
         }
 
-        public Game() {
+        public Game()
+        {
             player = new Player();
             croupier = new MainGame();
             currentBet = 0;
         }
 
-        public void DoBetOrUnbet(MouseEventArgs e, int value) {
+        public void DoBetOrUnbet(MouseEventArgs e, int value)
+        {
             if (isLaunched)
                 return;
-
-            int tempPlayerBet = player.MyBet;
 
             if (e.Button == MouseButtons.Left)
             {
@@ -68,48 +75,87 @@ namespace BlackJackAgile
                     return;
                 }
                 player.MyBet -= value;
-                croupier.GeneralBet += value;
+                currentBet += value;
             }
             else
             {
-                if (croupier.GeneralBet < value)
+                if (currentBet < value)
                 {
                     MessageBox.Show(String.Format("Vous ne pouvez pas récupérer {0}€", value));
                     return;
                 }
                 player.MyBet += value;
-                croupier.GeneralBet -= value;
+                currentBet -= value;
             }
-            currentBet = tempPlayerBet - player.MyBet;
         }
 
-        public StatePick CheckSum()
+        public void Double()
         {
-            var pts = player.GetPoints();
-            if (pts > 21)
-            {
-                MessageBox.Show(string.Format("Vous êtes à {0}. Vous avez perdu !", pts));
-                return StatePick.LOSE;
-            }
-            if (pts == 21)
-            {
-                MessageBox.Show(string.Format("Vous êtes à {0}. Place au croupier !", pts));
-                return StatePick.WIN;
-            }
-
-            return StatePick.NONE;
+            player.MyBet -= currentBet;
+            currentBet *= 2;
         }
 
         public void Reset()
         {
             player.Reset();
             croupier.Reset();
+            currentBet = 0;
         }
 
         // Fonction quand le joueur dis je reste ou est à 21 (le croupier fait son taff)
         public void LaunchEndGame()
         {
             BackCard(form);
+            if (Analyze())
+                timer.Start();
+            else
+                MakeResults();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns> Booléen indiquant si la partie continue ou pas</returns>
+        private bool Analyze()
+        {
+            var ptsCroup = croupier.GetPoints();
+            var ptsPlayer = player.GetPoints();
+            if (ptsCroup > 21)
+            {
+                finalState = State.WIN;
+                return false;
+            }
+            else
+            {
+                if (ptsCroup > 16)
+                    return DoStateHigherSixteen();
+                else
+                    return DoStateUnderOrEqualSixteen();
+            }
+        }
+
+        private bool DoStateHigherSixteen()
+        {
+            var ptsCroup = croupier.GetPoints();
+            var ptsPlayer = player.GetPoints();
+            if (ptsCroup > ptsPlayer)
+                finalState = State.LOSE;
+            else if (ptsCroup == ptsPlayer)
+                finalState = State.DEUCE;
+            else
+                finalState = State.WIN;
+
+            return false;
+        }
+
+        private bool DoStateUnderOrEqualSixteen()
+        {
+            var ptsCroup = croupier.GetPoints();
+            var ptsPlayer = player.GetPoints();
+            if (ptsCroup <= ptsPlayer)
+                return true;
+            finalState = State.LOSE;
+            return false;
         }
 
         public void PickCardPlayer()
@@ -160,6 +206,31 @@ namespace BlackJackAgile
         {
             player.Cards.Clear();
             croupier.Reset();
+            currentBet = 0;
+        }
+
+        public void MakeResults()
+        {
+            if (!finalState.HasValue)
+                return;
+            isLaunched = false;
+            DialogResult d;
+            if (finalState.Equals(State.WIN))
+            {
+                d = MessageBox.Show("Vous avez gagné !");
+                player.MyBet += currentBet * 2;
+            }
+            else if (finalState.Equals(State.DEUCE))
+            {
+                d = MessageBox.Show("Vous êtes à égalité, récuperez votre mise.");
+                player.MyBet += currentBet;
+            }
+            else
+                d = MessageBox.Show("Vous avez perdu ...");
+
+            currentBet = 0;
+            if (d == DialogResult.OK)
+                form.RestartGame();
         }
     }
 }

@@ -186,7 +186,6 @@
             this.label_compte.Size = new System.Drawing.Size(33, 22);
             this.label_compte.TabIndex = 14;
             this.label_compte.Text = "0€";
-            this.label_compte.Click += new System.EventHandler(this.label3_Click);
             // 
             // label_mise
             // 
@@ -215,6 +214,7 @@
             this.button_double.TabIndex = 16;
             this.button_double.Text = "Doubler !";
             this.button_double.UseVisualStyleBackColor = false;
+            this.button_double.Visible = false;
             this.button_double.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // MainForm
@@ -237,11 +237,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_pick);
             this.DoubleBuffered = true;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Text = "BlackJack";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j50)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j25)).EndInit();

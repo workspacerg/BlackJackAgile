@@ -5,10 +5,10 @@ using System.Text;
 
 namespace BlackJackAgile
 {
-    public enum StatePick
+    public enum State
     {
-        NONE,
         LOSE,
-        WIN
+        WIN,
+        DEUCE
     }
 }
