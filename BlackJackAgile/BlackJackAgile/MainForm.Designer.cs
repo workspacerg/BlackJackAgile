@@ -38,6 +38,7 @@
             this.pictureBox_j10 = new System.Windows.Forms.PictureBox();
             this.pictureBox_j25 = new System.Windows.Forms.PictureBox();
             this.pictureBox_j5 = new System.Windows.Forms.PictureBox();
+            this.buttonReste = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j25)).BeginInit();
@@ -178,6 +179,22 @@
             this.pictureBox_j5.TabIndex = 12;
             this.pictureBox_j5.TabStop = false;
             // 
+            // buttonReste
+            // 
+            this.buttonReste.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.buttonReste.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.buttonReste.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonReste.FlatAppearance.BorderSize = 0;
+            this.buttonReste.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonReste.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonReste.Location = new System.Drawing.Point(72, 259);
+            this.buttonReste.Name = "buttonReste";
+            this.buttonReste.Size = new System.Drawing.Size(102, 30);
+            this.buttonReste.TabIndex = 13;
+            this.buttonReste.Text = "Je reste !";
+            this.buttonReste.UseVisualStyleBackColor = false;
+            this.buttonReste.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -185,6 +202,7 @@
             this.BackgroundImage = global::BlackJackAgile.Properties.Resources.table;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(647, 342);
+            this.Controls.Add(this.buttonReste);
             this.Controls.Add(this.pictureBox_j5);
             this.Controls.Add(this.pictureBox_j25);
             this.Controls.Add(this.pictureBox_j10);
@@ -220,6 +238,7 @@
         private System.Windows.Forms.PictureBox pictureBox_j10;
         private System.Windows.Forms.PictureBox pictureBox_j25;
         private System.Windows.Forms.PictureBox pictureBox_j5;
+        private System.Windows.Forms.Button buttonReste;
     }
 }
 
