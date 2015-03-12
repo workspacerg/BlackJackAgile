@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace BlackJackAgile
 {
@@ -14,12 +15,38 @@ namespace BlackJackAgile
 
         public bool isLaunched { get; set; }
 
-        public Game() {
+        private Timer timer;
+
+        private MainForm form;
+
+        private int heightCroupier;
+
+        private int heightPlayer;
+
+        public Game(MainForm form, int heightC, int heightP)
+        {
             player = new Player();
             croupier = new MainGame();
+            heightCroupier = heightC;
+            heightPlayer = heightP;
+            timer = new Timer();
+            timer.Interval = 500;
+            timer.Tick += new EventHandler(timer_Tick);
+            this.form = form;
         }
 
-        public void DoBetOrUnbet(MouseEventArgs e, int value) {
+        void timer_Tick(object sender, EventArgs e)
+        {
+            PickCardCroupier(true);
+            if (croupier.GetPoints() > 21)
+            {
+                MessageBox.Show("Le croupier a dépassé 21, vous avez gagné");
+                timer.Stop();
+            }
+        }
+
+        public void DoBetOrUnbet(MouseEventArgs e, int value)
+        {
             if (isLaunched)
                 return;
             if (e.Button == MouseButtons.Left)
@@ -47,11 +74,13 @@ namespace BlackJackAgile
         public StatePick CheckSum()
         {
             var pts = player.GetPoints();
-            if (pts > 21) {
-                MessageBox.Show(string.Format("Vous êtes à {0}. Vous avez perdu !",pts));
+            if (pts > 21)
+            {
+                MessageBox.Show(string.Format("Vous êtes à {0}. Vous avez perdu !", pts));
                 return StatePick.LOSE;
             }
-            if (pts == 21) {
+            if (pts == 21)
+            {
                 MessageBox.Show(string.Format("Vous êtes à {0}. Place au croupier !", pts));
                 return StatePick.WIN;
             }
@@ -68,7 +97,52 @@ namespace BlackJackAgile
         // Fonction quand le joueur dis je reste ou est à 21 (le croupier fait son taff)
         public void LaunchEndGame()
         {
-            
+            BackCard(form);
+
+        }
+
+        public void PickCardPlayer()
+        {
+            var animator = ImageSpriteGenerator.getInstance();
+            int idx = croupier.GetIndex();
+            var card = animator.cardsGame[idx];
+            player.Cards.Add(card);
+
+            form.Controls.Add(new PictureBox()
+            {
+                Name = string.Format("Player_{0}", player.Cards.Count - 1),
+                Width = card.Image.Width,
+                Height = card.Image.Height,
+                Image = card.Image,
+                Location = new Point(form.Width / 4 + (player.Cards.Count * 40), heightPlayer)
+            });
+        }
+
+        public void PickCardCroupier(bool isVisible)
+        {
+            var animator = ImageSpriteGenerator.getInstance();
+            int idx = croupier.GetIndex();
+            var card = animator.cardsGame[idx];
+            card.Visible = isVisible;
+            croupier.Cards.Add(card);
+
+            form.Controls.Add(new PictureBox()
+            {
+                Name = string.Format("Croupier_{0}", croupier.Cards.Count - 1),
+                Width = card.Image.Width,
+                Height = card.Image.Height,
+                Image = card.Visible ? card.Image : animator.hideCard.Image,
+                Location = new Point(form.Width / 4 + (croupier.Cards.Count * 40), heightCroupier)
+            });
+        }
+
+        private void BackCard(MainForm form)
+        {
+            foreach (var c in form.Controls)
+            {
+                if (c is PictureBox && (c as PictureBox).Name.Equals("Croupier_1"))
+                    (c as PictureBox).Image = croupier.Cards[1].Image;
+            }
         }
 
         public void ResetCards()

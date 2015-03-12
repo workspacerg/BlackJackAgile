@@ -32,7 +32,7 @@ namespace BlackJackAgile
         {
             heightPlayer = 3 * (this.Height / 6);
             heightCroupier = this.Height / 3;
-            game = new Game();
+            game = new Game(this,heightCroupier,heightPlayer);
             textBoxMise.Text = string.Format("{0}€", game.croupier.GeneralBet);
             textBox_Account.Text = string.Format("{0}€", game.player.MyBet);
             InitEventsChips();
@@ -58,20 +58,7 @@ namespace BlackJackAgile
         /// <param name="isVisible">Indique si la carte est visible ou non</param>
         private void PickCardCroupier(bool isVisible)
         {
-            var animator = ImageSpriteGenerator.getInstance();
-            int idx = game.croupier.GetIndex();
-            var card = animator.cardsGame[idx];
-            card.Visible = isVisible;
-            game.croupier.Cards.Add(card);
-
-            this.Controls.Add(new PictureBox()
-            {
-                Name = string.Format("Croupier_{0}", idx),
-                Width = card.Image.Width,
-                Height = card.Image.Height,
-                Image = card.Visible ? card.Image : animator.hideCard.Image,
-                Location = new Point(this.Width / 4 + (game.croupier.Cards.Count * 40), heightCroupier)
-            });
+            game.PickCardCroupier(isVisible);
         }
 
         /// <summary>
@@ -79,19 +66,7 @@ namespace BlackJackAgile
         /// </summary>
         private void PickCardPlayer()
         {
-            var animator = ImageSpriteGenerator.getInstance();
-            int idx = game.croupier.GetIndex();
-            var card = animator.cardsGame[idx];
-            game.player.Cards.Add(card);
-
-            this.Controls.Add(new PictureBox()
-            {
-                Name = string.Format("Player_{0}", idx),
-                Width = card.Image.Width,
-                Height = card.Image.Height,
-                Image = card.Image,
-                Location = new Point(this.Width / 4 + (game.player.Cards.Count * 40), heightPlayer)
-            });
+            game.PickCardPlayer();
         }
 
         /// <summary>
@@ -177,6 +152,7 @@ namespace BlackJackAgile
 
         private void buttonReste_Click(object sender, EventArgs e)
         {
+            this.buttonReste.Visible = this.button_pick.Visible = false;
             game.LaunchEndGame();
         }
     }
