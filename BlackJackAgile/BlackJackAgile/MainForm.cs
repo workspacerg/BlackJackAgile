@@ -77,7 +77,7 @@ namespace BlackJackAgile
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            PickCardPlayer();
+            PickCardPlayer();     
             this.button_double.Visible = false; // Dès qu'on tire une carte on peut plus doubler
             score_joueur.Text = string.Format("Joueur : {0}", game.player.GetPoints());
             GetState();
@@ -150,13 +150,15 @@ namespace BlackJackAgile
 
             game.isLaunched = true;
             this.button_bet.Visible = false;
-            this.button_pick.Visible = this.buttonReste.Visible = this.button_double.Visible = true;
+            this.button_pick.Visible = this.buttonReste.Visible = true;
             bool firstCard = false;
             for (int i = 0; i < 2; i++)
             {
                 PickCardPlayer();
                 PickCardCroupier(firstCard = !firstCard);
             }
+            if (game.player.Cards[0] == game.player.Cards[1])
+                this.button_double.Visible = true;
             score_joueur.Text = string.Format("Joueur : {0}", game.player.GetPoints());
             score_banque.Text = string.Format("Banque : {0}", game.croupier.Cards[0].Value);
             GetState();
