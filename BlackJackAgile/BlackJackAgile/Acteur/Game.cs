@@ -9,6 +9,9 @@ namespace BlackJackAgile
 {
     public class Game
     {
+
+        public int currentBet { get; set; }
+
         public Player player { get; set; }
 
         public MainGame croupier { get; set; }
@@ -45,10 +48,18 @@ namespace BlackJackAgile
             }
         }
 
-        public void DoBetOrUnbet(MouseEventArgs e, int value)
-        {
+        public Game() {
+            player = new Player();
+            croupier = new MainGame();
+            currentBet = 0;
+        }
+
+        public void DoBetOrUnbet(MouseEventArgs e, int value) {
             if (isLaunched)
                 return;
+
+            int tempPlayerBet = player.MyBet;
+
             if (e.Button == MouseButtons.Left)
             {
                 if (player.MyBet < value)
@@ -69,6 +80,7 @@ namespace BlackJackAgile
                 player.MyBet += value;
                 croupier.GeneralBet -= value;
             }
+            currentBet = tempPlayerBet - player.MyBet;
         }
 
         public StatePick CheckSum()

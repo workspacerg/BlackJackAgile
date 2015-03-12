@@ -32,9 +32,10 @@ namespace BlackJackAgile
         {
             heightPlayer = 3 * (this.Height / 6);
             heightCroupier = this.Height / 3;
+
             game = new Game(this,heightCroupier,heightPlayer);
-            textBoxMise.Text = string.Format("{0}€", game.croupier.GeneralBet);
-            textBox_Account.Text = string.Format("{0}€", game.player.MyBet);
+            label_mise.Text = string.Format("{0}€", game.croupier.GeneralBet);
+            label_compte.Text = string.Format("{0}€", game.player.MyBet);
             InitEventsChips();
         }
 
@@ -97,6 +98,7 @@ namespace BlackJackAgile
             ResetPictureBox();
             game.ResetCards();
             this.button_bet.Visible = true;
+            this.button_double.Visible = true;
             game.isLaunched = false;
             this.button_pick.Visible = this.buttonReste.Visible = false;
             MAJ();
@@ -114,8 +116,8 @@ namespace BlackJackAgile
 
         private void MAJ()
         {
-            textBoxMise.Text = string.Format("{0}€", game.croupier.GeneralBet);
-            textBox_Account.Text = string.Format("{0}€", game.player.MyBet);
+            label_mise.Text = string.Format("{0}€", game.croupier.GeneralBet);
+            label_compte.Text = string.Format("{0}€", game.player.MyBet);
         }
 
         private void button_close_Click(object sender, EventArgs e)
@@ -154,6 +156,40 @@ namespace BlackJackAgile
         {
             this.buttonReste.Visible = this.button_pick.Visible = false;
             game.LaunchEndGame();
+        }
+
+        private void textBox_Account_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        /// <summary>
+        /// Doubler la mise
+        /// </summary>
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            if (game.croupier.GeneralBet == 0)
+            {
+                MessageBox.Show("Veuillez miser avant de jouer");
+                return;
+            }
+            PickCardPlayer();
+            this.button_double.Visible = false;
+
+            game.DoBetOrUnbet(((MouseEventArgs)e), game.currentBet);
+            MAJ();
+
+            GetState();
         }
     }
 }
