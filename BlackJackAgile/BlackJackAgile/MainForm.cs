@@ -11,7 +11,7 @@ namespace BlackJackAgile
 {
     public partial class MainForm : Form
     {
-        private Game game;
+        public Game game { get; set; }
 
         private static int heightPlayer;
 
@@ -141,7 +141,7 @@ namespace BlackJackAgile
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void button_bet_Click(object sender, EventArgs e)
+        public void button_bet_Click(object sender, EventArgs e)
         {
             if (game.isLaunched)
                 return;

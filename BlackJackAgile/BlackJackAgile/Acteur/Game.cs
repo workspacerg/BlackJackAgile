@@ -22,7 +22,7 @@ namespace BlackJackAgile
 
         private State? finalState;
 
-        private MainForm form;
+        public MainForm form { get; set; }
 
         private int heightCroupier;
 

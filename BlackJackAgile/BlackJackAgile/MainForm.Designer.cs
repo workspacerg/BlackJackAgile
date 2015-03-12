@@ -57,9 +57,10 @@
             this.button_pick.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_pick.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_pick.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_pick.Location = new System.Drawing.Point(120, 292);
+            this.button_pick.Location = new System.Drawing.Point(160, 359);
+            this.button_pick.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_pick.Name = "button_pick";
-            this.button_pick.Size = new System.Drawing.Size(102, 30);
+            this.button_pick.Size = new System.Drawing.Size(136, 37);
             this.button_pick.TabIndex = 0;
             this.button_pick.Text = "Carte !";
             this.button_pick.UseVisualStyleBackColor = false;
@@ -72,9 +73,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(9, 29);
+            this.label1.Location = new System.Drawing.Point(12, 36);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 16);
+            this.label1.Size = new System.Drawing.Size(82, 20);
             this.label1.TabIndex = 4;
             this.label1.Text = "Ma mise :";
             // 
@@ -85,9 +87,10 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Cambria", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label2.Location = new System.Drawing.Point(9, 9);
+            this.label2.Location = new System.Drawing.Point(12, 11);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 16);
+            this.label2.Size = new System.Drawing.Size(114, 20);
             this.label2.TabIndex = 5;
             this.label2.Text = "Mon compte :";
             // 
@@ -99,9 +102,10 @@
             this.button_bet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_bet.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_bet.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_bet.Location = new System.Drawing.Point(533, 247);
+            this.button_bet.Location = new System.Drawing.Point(711, 304);
+            this.button_bet.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_bet.Name = "button_bet";
-            this.button_bet.Size = new System.Drawing.Size(102, 30);
+            this.button_bet.Size = new System.Drawing.Size(136, 37);
             this.button_bet.TabIndex = 7;
             this.button_bet.Text = "Miser !";
             this.button_bet.UseVisualStyleBackColor = false;
@@ -113,9 +117,10 @@
             this.pictureBox_j50.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_j50.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_j50.Image = global::BlackJackAgile.Properties.Resources.jeton50;
-            this.pictureBox_j50.Location = new System.Drawing.Point(591, 292);
+            this.pictureBox_j50.Location = new System.Drawing.Point(788, 359);
+            this.pictureBox_j50.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox_j50.Name = "pictureBox_j50";
-            this.pictureBox_j50.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox_j50.Size = new System.Drawing.Size(59, 47);
             this.pictureBox_j50.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_j50.TabIndex = 9;
             this.pictureBox_j50.TabStop = false;
@@ -126,9 +131,10 @@
             this.pictureBox_j10.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_j10.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_j10.Image = global::BlackJackAgile.Properties.Resources.jeton10;
-            this.pictureBox_j10.Location = new System.Drawing.Point(469, 292);
+            this.pictureBox_j10.Location = new System.Drawing.Point(625, 359);
+            this.pictureBox_j10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox_j10.Name = "pictureBox_j10";
-            this.pictureBox_j10.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox_j10.Size = new System.Drawing.Size(59, 47);
             this.pictureBox_j10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_j10.TabIndex = 10;
             this.pictureBox_j10.TabStop = false;
@@ -139,9 +145,10 @@
             this.pictureBox_j25.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_j25.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_j25.Image = global::BlackJackAgile.Properties.Resources.jeton25;
-            this.pictureBox_j25.Location = new System.Drawing.Point(529, 292);
+            this.pictureBox_j25.Location = new System.Drawing.Point(705, 359);
+            this.pictureBox_j25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox_j25.Name = "pictureBox_j25";
-            this.pictureBox_j25.Size = new System.Drawing.Size(44, 38);
+            this.pictureBox_j25.Size = new System.Drawing.Size(59, 47);
             this.pictureBox_j25.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_j25.TabIndex = 11;
             this.pictureBox_j25.TabStop = false;
@@ -152,9 +159,10 @@
             this.pictureBox_j5.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox_j5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_j5.Image = global::BlackJackAgile.Properties.Resources.jeton5;
-            this.pictureBox_j5.Location = new System.Drawing.Point(407, 292);
+            this.pictureBox_j5.Location = new System.Drawing.Point(543, 359);
+            this.pictureBox_j5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox_j5.Name = "pictureBox_j5";
-            this.pictureBox_j5.Size = new System.Drawing.Size(42, 38);
+            this.pictureBox_j5.Size = new System.Drawing.Size(56, 47);
             this.pictureBox_j5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox_j5.TabIndex = 12;
             this.pictureBox_j5.TabStop = false;
@@ -168,9 +176,10 @@
             this.buttonReste.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonReste.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReste.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.buttonReste.Location = new System.Drawing.Point(12, 292);
+            this.buttonReste.Location = new System.Drawing.Point(16, 359);
+            this.buttonReste.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.buttonReste.Name = "buttonReste";
-            this.buttonReste.Size = new System.Drawing.Size(102, 30);
+            this.buttonReste.Size = new System.Drawing.Size(136, 37);
             this.buttonReste.TabIndex = 13;
             this.buttonReste.Text = "Je reste !";
             this.buttonReste.UseVisualStyleBackColor = false;
@@ -183,9 +192,10 @@
             this.label_compte.BackColor = System.Drawing.Color.Transparent;
             this.label_compte.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_compte.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label_compte.Location = new System.Drawing.Point(127, 3);
+            this.label_compte.Location = new System.Drawing.Point(169, 4);
+            this.label_compte.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_compte.Name = "label_compte";
-            this.label_compte.Size = new System.Drawing.Size(33, 22);
+            this.label_compte.Size = new System.Drawing.Size(40, 28);
             this.label_compte.TabIndex = 14;
             this.label_compte.Text = "0€";
             // 
@@ -196,9 +206,10 @@
             this.label_mise.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_mise.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_mise.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label_mise.Location = new System.Drawing.Point(127, 29);
+            this.label_mise.Location = new System.Drawing.Point(169, 36);
+            this.label_mise.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_mise.Name = "label_mise";
-            this.label_mise.Size = new System.Drawing.Size(33, 22);
+            this.label_mise.Size = new System.Drawing.Size(40, 28);
             this.label_mise.TabIndex = 15;
             this.label_mise.Text = "0€";
             // 
@@ -210,9 +221,10 @@
             this.button_double.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_double.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_double.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_double.Location = new System.Drawing.Point(228, 292);
+            this.button_double.Location = new System.Drawing.Point(304, 359);
+            this.button_double.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button_double.Name = "button_double";
-            this.button_double.Size = new System.Drawing.Size(102, 30);
+            this.button_double.Size = new System.Drawing.Size(136, 37);
             this.button_double.TabIndex = 16;
             this.button_double.Text = "Doubler !";
             this.button_double.UseVisualStyleBackColor = false;
@@ -226,9 +238,10 @@
             this.score_banque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.score_banque.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.score_banque.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.score_banque.Location = new System.Drawing.Point(403, 3);
+            this.score_banque.Location = new System.Drawing.Point(537, 4);
+            this.score_banque.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score_banque.Name = "score_banque";
-            this.score_banque.Size = new System.Drawing.Size(107, 22);
+            this.score_banque.Size = new System.Drawing.Size(119, 28);
             this.score_banque.TabIndex = 17;
             this.score_banque.Text = "Banque : 0";
             // 
@@ -239,19 +252,20 @@
             this.score_joueur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.score_joueur.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.score_joueur.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.score_joueur.Location = new System.Drawing.Point(529, 3);
+            this.score_joueur.Location = new System.Drawing.Point(705, 4);
+            this.score_joueur.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.score_joueur.Name = "score_joueur";
-            this.score_joueur.Size = new System.Drawing.Size(100, 22);
+            this.score_joueur.Size = new System.Drawing.Size(109, 28);
             this.score_joueur.TabIndex = 18;
             this.score_joueur.Text = "Joueur : 0";
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BlackJackAgile.Properties.Resources.tapis_de_black_jack_francais;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(647, 342);
+            this.ClientSize = new System.Drawing.Size(863, 421);
             this.Controls.Add(this.score_joueur);
             this.Controls.Add(this.score_banque);
             this.Controls.Add(this.button_double);
@@ -268,6 +282,7 @@
             this.Controls.Add(this.button_pick);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BlackJack";
@@ -285,7 +300,6 @@
         private System.Windows.Forms.Button button_pick;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button_bet;
         private System.Windows.Forms.PictureBox pictureBox_j50;
         private System.Windows.Forms.PictureBox pictureBox_j10;
         private System.Windows.Forms.PictureBox pictureBox_j25;
@@ -296,6 +310,7 @@
         private System.Windows.Forms.Button button_double;
         private System.Windows.Forms.Label score_banque;
         private System.Windows.Forms.Label score_joueur;
+        private System.Windows.Forms.Button button_bet;
     }
 }
 
