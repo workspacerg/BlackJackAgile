@@ -172,7 +172,7 @@ namespace BlackJackAgile
 
         private void buttonReste_Click(object sender, EventArgs e)
         {
-
+            game.LaunchEndGame();
         }
     }
 }
