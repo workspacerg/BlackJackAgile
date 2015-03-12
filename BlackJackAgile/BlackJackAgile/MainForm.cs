@@ -100,6 +100,9 @@ namespace BlackJackAgile
 
         public void RestartGame()
         {
+
+            score_banque.Text = string.Format("Banque : {0}", game.croupier.GetPoints());
+
             if (game.player.MyBet == 0) {
                 new EndGame().ShowDialog(this);
                 return;
@@ -168,8 +171,6 @@ namespace BlackJackAgile
         {
             this.buttonReste.Visible = this.button_pick.Visible = false;
             game.LaunchEndGame();
-            score_banque.Text = string.Format("Banque : {0}", game.croupier.GetPoints());
-
         }
 
         /// <summary>
