@@ -122,6 +122,7 @@ namespace BlackJackAgile
             ResetPictureBox();
             game.ResetCards();
             this.button_bet.Visible = true;
+            this.button_double.Visible = true;
             game.isLaunched = false;
             this.button_pick.Visible = this.buttonReste.Visible = false;
             MAJ();
@@ -195,9 +196,23 @@ namespace BlackJackAgile
 
         }
 
+        /// <summary>
+        /// Doubler la mise
+        /// </summary>
         private void button1_Click_1(object sender, EventArgs e)
         {
+            if (game.croupier.GeneralBet == 0)
+            {
+                MessageBox.Show("Veuillez miser avant de jouer");
+                return;
+            }
+            PickCardPlayer();
+            this.button_double.Visible = false;
 
+            game.DoBetOrUnbet(((MouseEventArgs)e), game.currentBet);
+            MAJ();
+
+            GetState();
         }
     }
 }
