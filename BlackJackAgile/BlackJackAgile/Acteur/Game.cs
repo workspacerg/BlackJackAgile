@@ -48,11 +48,9 @@ namespace BlackJackAgile
                 return;
             }
             PickCardCroupier(true);
+            form.MAJ();
             if (!Analyze())
-            {
-                timer.Stop();
                 MakeResults();
-            }
         }
 
         public Game()
@@ -195,6 +193,7 @@ namespace BlackJackAgile
 
         private void BackCard(MainForm form)
         {
+            croupier.Cards[1].Visible = true;
             foreach (var c in form.Controls)
             {
                 if (c is PictureBox && (c as PictureBox).Name.Equals("Croupier_1"))
@@ -229,6 +228,7 @@ namespace BlackJackAgile
                 d = MessageBox.Show("Vous avez perdu ...");
 
             currentBet = 0;
+            timer.Stop();
             if (d == DialogResult.OK)
                 form.RestartGame();
         }

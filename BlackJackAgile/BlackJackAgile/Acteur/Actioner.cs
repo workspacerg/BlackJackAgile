@@ -20,7 +20,7 @@ namespace BlackJackAgile
             int currentPts = 0;
             int nbAs = 0;
 
-            foreach (Card card in Cards)
+            foreach (Card card in Cards.Where(x=>x.Visible))
             {
                 if (card.Value != 1)
                     currentPts += card.Value;

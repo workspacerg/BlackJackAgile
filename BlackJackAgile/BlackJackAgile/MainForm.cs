@@ -60,6 +60,7 @@ namespace BlackJackAgile
         private void PickCardCroupier(bool isVisible)
         {
             game.PickCardCroupier(isVisible);
+            MAJ();
         }
 
         /// <summary>
@@ -68,6 +69,7 @@ namespace BlackJackAgile
         private void PickCardPlayer()
         {
             game.PickCardPlayer();
+            MAJ();
         }
 
         /// <summary>
@@ -79,7 +81,6 @@ namespace BlackJackAgile
         {
             PickCardPlayer();     
             this.button_double.Visible = false; // Dès qu'on tire une carte on peut plus doubler
-            score_joueur.Text = string.Format("Joueur : {0}", game.player.GetPoints());
             GetState();
 
         }
@@ -93,16 +94,17 @@ namespace BlackJackAgile
             }
             else if (sum == 21)
             {
-                MessageBox.Show(string.Format("Vous êtes à {0}. Place au croupier !", sum));
-                game.LaunchEndGame();
+                var d = MessageBox.Show(string.Format("Vous êtes à {0}. Place au croupier !", sum));
+                if (d == DialogResult.OK)
+                {
+                    System.Threading.Thread.Sleep(1000);
+                    game.LaunchEndGame();
+                }
             }
         }
 
         public void RestartGame()
         {
-
-            score_banque.Text = string.Format("Banque : {0}", game.croupier.GetPoints());
-
             if (game.player.MyBet == 0) {
                 new EndGame().ShowDialog(this);
                 return;
@@ -125,10 +127,12 @@ namespace BlackJackAgile
             pb.ForEach(x => this.Controls.Remove(x));
         }
 
-        private void MAJ()
+        public void MAJ()
         {
             label_mise.Text = string.Format("{0}€", game.currentBet);
             label_compte.Text = string.Format("{0}€", game.player.MyBet);
+            score_joueur.Text = string.Format("Joueur : {0}", game.player.GetPoints());
+            score_banque.Text = string.Format("Banque : {0}", game.croupier.GetPoints());
         }
 
         private void button_close_Click(object sender, EventArgs e)
@@ -153,17 +157,13 @@ namespace BlackJackAgile
 
             game.isLaunched = true;
             this.button_bet.Visible = false;
-            this.button_pick.Visible = this.buttonReste.Visible = true;
+            this.button_pick.Visible = this.buttonReste.Visible = this.button_double.Visible = true;
             bool firstCard = false;
             for (int i = 0; i < 2; i++)
             {
                 PickCardPlayer();
                 PickCardCroupier(firstCard = !firstCard);
             }
-            if (game.player.Cards[0] == game.player.Cards[1])
-                this.button_double.Visible = true;
-            score_joueur.Text = string.Format("Joueur : {0}", game.player.GetPoints());
-            score_banque.Text = string.Format("Banque : {0}", game.croupier.Cards[0].Value);
             GetState();
         }
 
