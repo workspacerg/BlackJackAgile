@@ -102,6 +102,10 @@ namespace BlackJackAgile
         private void button1_Click(object sender, EventArgs e)
         {
             PickCardPlayer();
+            GetState();
+        }
+
+        private void GetState() {
             var checkSum = game.CheckSum();
             if (checkSum.Equals(StatePick.LOSE)) // Fin du jeu, joueur a perdu
                 RestartGame();
@@ -119,7 +123,7 @@ namespace BlackJackAgile
             game.ResetCards();
             this.button_bet.Visible = true;
             game.isLaunched = false;
-            this.button_pick.Visible = false;
+            this.button_pick.Visible = this.buttonReste.Visible = false;
             MAJ();
         }
 
@@ -161,13 +165,19 @@ namespace BlackJackAgile
 
             game.isLaunched = true;
             this.button_bet.Visible = false;
-            this.button_pick.Visible = true;
+            this.button_pick.Visible = this.buttonReste.Visible = true;
             bool firstCard = false;
             for (int i = 0; i < 2; i++)
             {
                 PickCardPlayer();
                 PickCardCroupier(firstCard = !firstCard);
             }
+            GetState();
+        }
+
+        private void buttonReste_Click(object sender, EventArgs e)
+        {
+            game.LaunchEndGame();
         }
     }
 }
