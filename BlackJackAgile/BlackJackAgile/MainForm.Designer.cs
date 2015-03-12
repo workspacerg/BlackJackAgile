@@ -39,6 +39,7 @@
             this.buttonReste = new System.Windows.Forms.Button();
             this.label_compte = new System.Windows.Forms.Label();
             this.label_mise = new System.Windows.Forms.Label();
+            this.button_double = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j25)).BeginInit();
@@ -200,6 +201,22 @@
             this.label_mise.TabIndex = 15;
             this.label_mise.Text = "0€";
             // 
+            // button_double
+            // 
+            this.button_double.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(165)))), ((int)(((byte)(28)))));
+            this.button_double.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_double.FlatAppearance.BorderSize = 0;
+            this.button_double.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_double.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_double.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_double.Location = new System.Drawing.Point(228, 292);
+            this.button_double.Name = "button_double";
+            this.button_double.Size = new System.Drawing.Size(102, 30);
+            this.button_double.TabIndex = 16;
+            this.button_double.Text = "Doubler !";
+            this.button_double.UseVisualStyleBackColor = false;
+            this.button_double.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,6 +224,7 @@
             this.BackgroundImage = global::BlackJackAgile.Properties.Resources.tapis_de_black_jack_francais;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(647, 342);
+            this.Controls.Add(this.button_double);
             this.Controls.Add(this.label_mise);
             this.Controls.Add(this.label_compte);
             this.Controls.Add(this.buttonReste);
@@ -218,6 +236,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_pick);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -245,6 +264,7 @@
         private System.Windows.Forms.Button buttonReste;
         private System.Windows.Forms.Label label_compte;
         private System.Windows.Forms.Label label_mise;
+        private System.Windows.Forms.Button button_double;
     }
 }
 
