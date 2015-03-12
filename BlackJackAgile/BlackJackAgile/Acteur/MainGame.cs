@@ -18,7 +18,7 @@ namespace BlackJackAgile
             Cards = new List<Card>();
         }
 
-        public void ResetGame() {
+        public override void Reset() {
             GeneralBet = 0;
             indexUsed.Clear();
         }

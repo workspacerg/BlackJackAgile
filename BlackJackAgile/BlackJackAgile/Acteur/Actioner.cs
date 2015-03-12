@@ -12,5 +12,8 @@ namespace BlackJackAgile
         public Actioner() {
             Cards = new List<Card>();
         }
+
+        public abstract void Reset();
+
     }
 }

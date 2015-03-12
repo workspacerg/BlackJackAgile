@@ -19,6 +19,12 @@ namespace BlackJackAgile
             Cards = new List<Card>();
             MyBet = 200;
         }
+
+        public override void Reset()
+        {
+            MyBet = 200;
+            Cards.Clear();
+        }
         
         public int getPtsPlayer(){
         	int currentPts = 0;
