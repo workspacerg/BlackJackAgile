@@ -79,7 +79,9 @@ namespace BlackJackAgile
         {
             PickCardPlayer();
             this.button_double.Visible = false; // Dès qu'on tire une carte on peut plus doubler
+            score_joueur.Text = string.Format("Joueur : {0}", game.player.GetPoints());
             GetState();
+
         }
 
         private void GetState() {
@@ -155,6 +157,8 @@ namespace BlackJackAgile
                 PickCardPlayer();
                 PickCardCroupier(firstCard = !firstCard);
             }
+            score_joueur.Text = string.Format("Joueur : {0}", game.player.GetPoints());
+            score_banque.Text = string.Format("Banque : {0}", game.croupier.Cards[0].Value);
             GetState();
         }
 
@@ -162,6 +166,8 @@ namespace BlackJackAgile
         {
             this.buttonReste.Visible = this.button_pick.Visible = false;
             game.LaunchEndGame();
+            score_banque.Text = string.Format("Banque : {0}", game.croupier.GetPoints());
+
         }
 
         /// <summary>
@@ -181,5 +187,6 @@ namespace BlackJackAgile
             GetState();
             game.LaunchEndGame();
         }
+
     }
 }

@@ -40,6 +40,8 @@
             this.label_compte = new System.Windows.Forms.Label();
             this.label_mise = new System.Windows.Forms.Label();
             this.button_double = new System.Windows.Forms.Button();
+            this.score_banque = new System.Windows.Forms.Label();
+            this.score_joueur = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j25)).BeginInit();
@@ -217,6 +219,32 @@
             this.button_double.Visible = false;
             this.button_double.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // score_banque
+            // 
+            this.score_banque.AutoSize = true;
+            this.score_banque.BackColor = System.Drawing.Color.Transparent;
+            this.score_banque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.score_banque.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score_banque.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.score_banque.Location = new System.Drawing.Point(403, 3);
+            this.score_banque.Name = "score_banque";
+            this.score_banque.Size = new System.Drawing.Size(107, 22);
+            this.score_banque.TabIndex = 17;
+            this.score_banque.Text = "Banque : 0";
+            // 
+            // score_joueur
+            // 
+            this.score_joueur.AutoSize = true;
+            this.score_joueur.BackColor = System.Drawing.Color.Transparent;
+            this.score_joueur.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.score_joueur.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.score_joueur.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.score_joueur.Location = new System.Drawing.Point(529, 3);
+            this.score_joueur.Name = "score_joueur";
+            this.score_joueur.Size = new System.Drawing.Size(100, 22);
+            this.score_joueur.TabIndex = 18;
+            this.score_joueur.Text = "Joueur : 0";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +252,8 @@
             this.BackgroundImage = global::BlackJackAgile.Properties.Resources.tapis_de_black_jack_francais;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(647, 342);
+            this.Controls.Add(this.score_joueur);
+            this.Controls.Add(this.score_banque);
             this.Controls.Add(this.button_double);
             this.Controls.Add(this.label_mise);
             this.Controls.Add(this.label_compte);
@@ -264,6 +294,8 @@
         private System.Windows.Forms.Label label_compte;
         private System.Windows.Forms.Label label_mise;
         private System.Windows.Forms.Button button_double;
+        private System.Windows.Forms.Label score_banque;
+        private System.Windows.Forms.Label score_joueur;
     }
 }
 
