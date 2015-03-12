@@ -169,5 +169,10 @@ namespace BlackJackAgile
                 PickCardCroupier(firstCard = !firstCard);
             }
         }
+
+        private void buttonReste_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
