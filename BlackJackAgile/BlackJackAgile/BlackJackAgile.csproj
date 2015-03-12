@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Acteur\Actioner.cs" />
     <Compile Include="Cards\Card.cs" />
+    <Compile Include="EndGame.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EndGame.Designer.cs">
+      <DependentUpon>EndGame.cs</DependentUpon>
+    </Compile>
     <Compile Include="StatePick.cs" />
     <Compile Include="Acteur\Game.cs" />
     <Compile Include="MainForm.cs">
@@ -61,6 +67,9 @@
     <Compile Include="Acteur\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EndGame.resx">
+      <DependentUpon>EndGame.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -111,6 +111,10 @@ namespace BlackJackAgile
 
         private void RestartGame()
         {
+            if (game.player.MyBet == 0) {
+                new EndGame().ShowDialog(this);
+                return;
+            }
             ResetPictureBox();
             game.ResetCards();
             this.game.croupier.GeneralBet = 0;

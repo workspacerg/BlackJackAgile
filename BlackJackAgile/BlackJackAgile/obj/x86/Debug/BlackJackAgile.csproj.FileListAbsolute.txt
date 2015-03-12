@@ -22,3 +22,4 @@ C:\Users\Charly-PC\Desktop\ESGI 2014-2015\Methodologie Agile\BlackJackProject\Bl
 C:\Users\Charly-PC\Desktop\ESGI 2014-2015\Methodologie Agile\BlackJackProject\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.pdb
 C:\Users\Charly-PC\Desktop\ESGI 2014-2015\Methodologie Agile\BlackJackProject\BlackJackAgile\BlackJackAgile\bin\Debug\nunit.framework.dll
 C:\Users\Charly-PC\Desktop\ESGI 2014-2015\Methodologie Agile\BlackJackProject\BlackJackAgile\BlackJackAgile\bin\Debug\nunit.framework.xml
+C:\Users\Rayane\Documents\SourceTree\BlackJackAgile\BlackJackAgile\BlackJackAgile\obj\x86\Debug\BlackJackAgile.EndGame.resources
