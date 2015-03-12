@@ -119,7 +119,7 @@ namespace BlackJackAgile
             game.ResetCards();
             this.button_bet.Visible = true;
             game.isLaunched = false;
-            this.button_pick.Visible = false;
+            this.button_pick.Visible = this.buttonReste.Visible = false;
             MAJ();
         }
 
@@ -161,7 +161,7 @@ namespace BlackJackAgile
 
             game.isLaunched = true;
             this.button_bet.Visible = false;
-            this.button_pick.Visible = true;
+            this.button_pick.Visible = this.buttonReste.Visible = true;
             bool firstCard = false;
             for (int i = 0; i < 2; i++)
             {
