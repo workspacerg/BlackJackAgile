@@ -23,6 +23,7 @@ namespace BlackJackAgileTest
         [TestMethod]
         public void verificationLimitationBorneSupMise()
         {
+            game.form = form;
             game.DoBetOrUnbet(evtSourisClicGauche, 201);
             int montantMise = game.currentBet;
             Assert.IsTrue(montantMise == 0);
@@ -31,6 +32,7 @@ namespace BlackJackAgileTest
         [TestMethod]
         public void verificationLimitationBorneInfMise()
         {
+            game.form = form;
             game.DoBetOrUnbet(evtSourisClicDroit, 50);
             int montantMise = game.currentBet;
             Assert.IsTrue(montantMise == 0);
@@ -60,7 +62,7 @@ namespace BlackJackAgileTest
         {
             // mise placé à 0
             game.currentBet = 0;
-            game.form = new MainForm();
+            game.form = form;
            
             // on clique sur le bouton "Miser"
             game.form.button_bet_Click(null, null);
@@ -97,15 +99,6 @@ namespace BlackJackAgileTest
             Assert.IsTrue(game.croupier.Cards[1].Visible == false);
         }
 
-       /* public void verification*/
-       /* [TestMethod]
-        public void verificationComptePointInit()
-        {
-             // jeu non démarré
-            game.isLaunched = false;
-
-        }*/
-
          [TestMethod]
         public void verificationRegleCroupier()
         {
@@ -120,29 +113,11 @@ namespace BlackJackAgileTest
             game.croupier.Cards[0].Value = 10;
             game.croupier.Cards[1].Value = 6;
             game.croupier.Cards[1].Visible = true;
-
-            game.player.Cards[0].Value = 5;
+            game.player.Cards[0].Value = 6;
             game.player.Cards[1].Value = 10;
 
             Assert.IsTrue(game.Analyze());
 
-         // game.Reset();
-
-            // mise placé à 50€
-            /*game.currentBet = 50;
-            game.form = form;
-            form.game = game;
-             */
-            // récupération des cartes
-            //ImageSpriteGenerator.getInstance().Load();
-
-            // on clique sur le bouton "Miser"
-           // game.form.button_bet_Click(null, null);
-          /*  game.croupier.Cards[0].Value = 10;
-            game.croupier.Cards[1].Value = 7;
-
-          
-            Assert.IsFalse(game.Analyze());*/
             game.croupier.Cards[0].Value = 10;
             game.croupier.Cards[1].Value = 7;
             Assert.IsFalse(game.Analyze());
