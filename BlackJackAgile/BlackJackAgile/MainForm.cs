@@ -33,7 +33,7 @@ namespace BlackJackAgile
             heightPlayer = 3 * (this.Height / 6);
             heightCroupier = this.Height / 3;
 
-            game = new Game(this,heightCroupier,heightPlayer);
+            game = new Game(this, heightCroupier, heightPlayer);
             label_mise.Text = string.Format("{0}€", game.currentBet);
             label_compte.Text = string.Format("{0}€", game.player.MyBet);
             InitEventsChips();
@@ -49,7 +49,7 @@ namespace BlackJackAgile
 
         void pictureBox_j_Click(object sender, EventArgs e, int value)
         {
-            game.DoBetOrUnbet(((MouseEventArgs)e), value);   
+            game.DoBetOrUnbet(((MouseEventArgs)e), value);
             MAJ();
         }
 
@@ -79,33 +79,32 @@ namespace BlackJackAgile
         /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
-            PickCardPlayer();     
+            PickCardPlayer();
             this.button_double.Visible = false; // Dès qu'on tire une carte on peut plus doubler
             GetState();
 
         }
 
-        private void GetState() {
+        private void GetState()
+        {
             var sum = game.player.GetPoints();
             if (sum > 21)
             {
-                MessageBox.Show(string.Format("Vous êtes à {0}. Vous avez perdu !", sum));
+                this.label_Main.Text = string.Format("Vous êtes à {0}. Vous avez perdu !", sum);
                 RestartGame();
             }
             else if (sum == 21)
             {
-                var d = MessageBox.Show(string.Format("Vous êtes à {0}. Place au croupier !", sum));
-                if (d == DialogResult.OK)
-                {
-                    System.Threading.Thread.Sleep(1000);
-                    game.LaunchEndGame();
-                }
+                this.label_Main.Text = string.Format("Vous êtes à 21. Place au croupier !");
+                System.Threading.Thread.Sleep(1000);
+                game.LaunchEndGame();
             }
         }
 
         public void RestartGame()
         {
-            if (game.player.MyBet == 0) {
+            if (game.player.MyBet == 0)
+            {
                 new EndGame().ShowDialog(this);
                 return;
             }
@@ -114,13 +113,15 @@ namespace BlackJackAgile
             this.button_bet.Visible = true;
             game.isLaunched = false;
             this.button_pick.Visible = this.buttonReste.Visible = this.button_double.Visible = false;
+            this.label_Main.Text = "Miser pour jouer !";
             MAJ();
         }
 
         private void ResetPictureBox()
         {
             var pb = new List<PictureBox>();
-            foreach (var c in this.Controls) {
+            foreach (var c in this.Controls)
+            {
                 if (c is PictureBox && !(c as PictureBox).Name.StartsWith("pictureBox_j"))
                     pb.Add(c as PictureBox);
             }
@@ -151,7 +152,7 @@ namespace BlackJackAgile
                 return;
             if (game.currentBet == 0)
             {
-                MessageBox.Show("Veuillez miser avant de jouer");
+                this.label_Main.Text = "Veuillez miser avant de jouer";
                 return;
             }
 
@@ -165,6 +166,7 @@ namespace BlackJackAgile
                 PickCardCroupier(firstCard = !firstCard);
             }
             GetState();
+            this.label_Main.Text = "Partie en cours ...";
         }
 
         private void buttonReste_Click(object sender, EventArgs e)
@@ -178,9 +180,9 @@ namespace BlackJackAgile
         /// </summary>
         private void button1_Click_1(object sender, EventArgs e)
         {
-            if (game.currentBet>game.player.MyBet)
+            if (game.currentBet > game.player.MyBet)
             {
-                MessageBox.Show("Vous n'avez pas assez d'argent pour doubler ... ");
+                this.label_Main.Text = "Vous n'avez pas assez d'argent pour doubler ... ";
                 return;
             }
             game.Double();
@@ -188,8 +190,14 @@ namespace BlackJackAgile
             this.button_double.Visible = this.button_pick.Visible = this.buttonReste.Visible = false;
             MAJ();
             GetState();
-            if(game.isLaunched)
-            game.LaunchEndGame();
+            if (game.isLaunched)
+                game.LaunchEndGame();
+        }
+
+        private void button_continue_Click(object sender, EventArgs e)
+        {
+            RestartGame();
+            button_continue.Visible = false;
         }
 
     }

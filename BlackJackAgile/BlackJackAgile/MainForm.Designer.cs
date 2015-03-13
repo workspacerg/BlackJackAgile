@@ -42,8 +42,8 @@
             this.button_double = new System.Windows.Forms.Button();
             this.score_banque = new System.Windows.Forms.Label();
             this.score_joueur = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.label_Main = new System.Windows.Forms.Label();
+            this.button_continue = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j50)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_j25)).BeginInit();
@@ -250,35 +250,36 @@
             this.score_joueur.TabIndex = 18;
             this.score_joueur.Text = "Joueur : 0";
             // 
-            // label3
+            // label_Main
             // 
-            this.label3.BackColor = System.Drawing.SystemColors.GrayText;
-            this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label3.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(676, 37);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Vous avez gagné ! ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Main.BackColor = System.Drawing.SystemColors.GrayText;
+            this.label_Main.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label_Main.Font = new System.Drawing.Font("Cambria", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Main.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label_Main.Location = new System.Drawing.Point(0, 0);
+            this.label_Main.Name = "label_Main";
+            this.label_Main.Size = new System.Drawing.Size(676, 37);
+            this.label_Main.TabIndex = 19;
+            this.label_Main.Text = "Miser pour jouer !";
+            this.label_Main.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // button_continue
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(553, 199);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(102, 30);
-            this.button1.TabIndex = 20;
-            this.button1.Text = "Continuer";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Visible = false;
+            this.button_continue.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_continue.BackColor = System.Drawing.Color.RoyalBlue;
+            this.button_continue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button_continue.FlatAppearance.BorderSize = 0;
+            this.button_continue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_continue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_continue.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_continue.Location = new System.Drawing.Point(557, 197);
+            this.button_continue.Name = "button_continue";
+            this.button_continue.Size = new System.Drawing.Size(102, 30);
+            this.button_continue.TabIndex = 20;
+            this.button_continue.Text = "Continuer";
+            this.button_continue.UseVisualStyleBackColor = false;
+            this.button_continue.Visible = false;
+            this.button_continue.Click += new System.EventHandler(this.button_continue_Click);
             // 
             // MainForm
             // 
@@ -287,8 +288,8 @@
             this.BackgroundImage = global::BlackJackAgile.Properties.Resources.tapis_de_black_jack_francais;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(671, 409);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.button_continue);
+            this.Controls.Add(this.label_Main);
             this.Controls.Add(this.score_joueur);
             this.Controls.Add(this.score_banque);
             this.Controls.Add(this.button_double);
@@ -333,8 +334,8 @@
         private System.Windows.Forms.Label score_banque;
         private System.Windows.Forms.Label score_joueur;
         private System.Windows.Forms.Button button_bet;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button1;
+        public System.Windows.Forms.Label label_Main;
+        public System.Windows.Forms.Button button_continue;
     }
 }
 

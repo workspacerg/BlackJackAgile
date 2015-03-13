@@ -69,7 +69,7 @@ namespace BlackJackAgile
             {
                 if (player.MyBet < value)
                 {
-                    MessageBox.Show(String.Format("Vous n'avez pas assez d'argent pour miser {0}€", value));
+                    form.label_Main.Text = String.Format("Vous n'avez pas assez d'argent pour miser {0}€", value);
                     return;
                 }
                 player.MyBet -= value;
@@ -79,7 +79,7 @@ namespace BlackJackAgile
             {
                 if (currentBet < value)
                 {
-                    MessageBox.Show(String.Format("Vous ne pouvez pas récupérer {0}€", value));
+                    form.label_Main.Text = String.Format("Vous ne pouvez pas récupérer {0}€", value);
                     return;
                 }
                 player.MyBet += value;
@@ -215,24 +215,22 @@ namespace BlackJackAgile
             if (!finalState.HasValue)
                 return;
             isLaunched = false;
-            DialogResult d;
             if (finalState.Equals(State.WIN))
             {
-                d = MessageBox.Show("Vous avez gagné !");
+                form.label_Main.Text = "Vous avez gagné !";
                 player.MyBet += currentBet * 2;
             }
             else if (finalState.Equals(State.DEUCE))
             {
-                d = MessageBox.Show("Vous êtes à égalité, récuperez votre mise.");
+                form.label_Main.Text = "Vous êtes à égalité, récuperez votre mise.";
                 player.MyBet += currentBet;
             }
             else
-                d = MessageBox.Show("Vous avez perdu ...");
+               form.label_Main.Text = "Vous avez perdu ...";
 
             currentBet = 0;
             timer.Stop();
-            if (d == DialogResult.OK)
-                form.RestartGame();
+            form.button_continue.Visible = true;
         }
     }
 }
