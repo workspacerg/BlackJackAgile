@@ -188,6 +188,7 @@ namespace BlackJackAgile
             this.button_double.Visible = this.button_pick.Visible = this.buttonReste.Visible = false;
             MAJ();
             GetState();
+            if(game.isLaunched)
             game.LaunchEndGame();
         }
 
