@@ -46,14 +46,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Acteur\Actioner.cs" />
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="EndGame.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="EndGame.Designer.cs">
+      <DependentUpon>EndGame.cs</DependentUpon>
     </Compile>
+    <Compile Include="State.cs" />
+    <Compile Include="Acteur\Game.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cards\ImageSpriteGenerator.cs" />
+    <Compile Include="Acteur\MainGame.cs" />
+    <Compile Include="Acteur\Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="EndGame.resx">
+      <DependentUpon>EndGame.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +81,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -74,8 +94,20 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="assets\" />
-    <Folder Include="src\" />
+    <None Include="Resources\cards.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\croixrouge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\jeton10.png" />
+    <Content Include="Resources\jeton25.png" />
+    <Content Include="Resources\jeton5.png" />
+    <Content Include="Resources\jeton50.png" />
+    <None Include="Resources\tapis-de-black-jack-francais.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
