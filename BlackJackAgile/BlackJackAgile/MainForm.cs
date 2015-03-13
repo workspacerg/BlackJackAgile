@@ -99,7 +99,6 @@ namespace BlackJackAgile
             {
                 this.button_double.Visible = this.button_pick.Visible = this.buttonReste.Visible = false;
                 this.label_Main.Text = string.Format("Vous êtes à 21. Place au croupier !");
-                System.Threading.Thread.Sleep(1000);
                 game.LaunchEndGame();
             }
         }
