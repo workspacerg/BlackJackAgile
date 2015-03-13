@@ -104,6 +104,7 @@ namespace BlackJackAgile
         public void LaunchEndGame()
         {
             BackCard(form);
+            form.MAJ();
             if (Analyze())
                 timer.Start();
             else
