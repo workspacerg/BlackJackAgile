@@ -91,7 +91,6 @@ namespace BlackJackAgile
             if (sum > 21)
             {
                 this.label_Main.Text = string.Format("Vous êtes à {0}. Vous avez perdu !", sum);
-                RestartGame();
             }
             else if (sum == 21)
             {
@@ -192,6 +191,8 @@ namespace BlackJackAgile
             GetState();
             if (game.isLaunched)
                 game.LaunchEndGame();
+            else
+                this.button_continue.Visible = true;
         }
 
         private void button_continue_Click(object sender, EventArgs e)
