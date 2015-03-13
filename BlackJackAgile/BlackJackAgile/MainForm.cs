@@ -172,7 +172,7 @@ namespace BlackJackAgile
             this.label_Main.Text = "Partie en cours ...";
         }
 
-        private void buttonReste_Click(object sender, EventArgs e)
+        public void buttonReste_Click(object sender, EventArgs e)
         {
             this.buttonReste.Visible = this.button_pick.Visible = this.button_double.Visible = false;
             game.LaunchEndGame();

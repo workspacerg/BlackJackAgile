@@ -20,7 +20,7 @@ namespace BlackJackAgile
 
         private Timer timer;
 
-        private State? finalState;
+        public State? finalState { get; set; }
 
         public MainForm form { get; set; }
 
