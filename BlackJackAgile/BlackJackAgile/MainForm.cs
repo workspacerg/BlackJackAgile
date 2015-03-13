@@ -91,9 +91,13 @@ namespace BlackJackAgile
             if (sum > 21)
             {
                 this.label_Main.Text = string.Format("Vous êtes à {0}. Vous avez perdu !", sum);
+                game.isLaunched = false;
+                this.button_continue.Visible = true;
+                this.button_double.Visible = this.button_pick.Visible = this.buttonReste.Visible = false;
             }
             else if (sum == 21)
             {
+                this.button_double.Visible = this.button_pick.Visible = this.buttonReste.Visible = false;
                 this.label_Main.Text = string.Format("Vous êtes à 21. Place au croupier !");
                 System.Threading.Thread.Sleep(1000);
                 game.LaunchEndGame();
@@ -190,9 +194,7 @@ namespace BlackJackAgile
             MAJ();
             GetState();
             if (game.isLaunched)
-                game.LaunchEndGame();
-            else
-                this.button_continue.Visible = true;
+                game.LaunchEndGame();                
         }
 
         private void button_continue_Click(object sender, EventArgs e)
