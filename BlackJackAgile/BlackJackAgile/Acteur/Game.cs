@@ -115,7 +115,7 @@ namespace BlackJackAgile
         /// 
         /// </summary>
         /// <returns> Booléen indiquant si la partie continue ou pas</returns>
-        private bool Analyze()
+        public bool Analyze()
         {
             var ptsCroup = croupier.GetPoints();
             var ptsPlayer = player.GetPoints();
