@@ -162,6 +162,7 @@ namespace BlackJackAgile
             var animator = ImageSpriteGenerator.getInstance();
             int idx = croupier.GetIndex();
             var card = animator.cardsGame[idx];
+            card.Visible = true;
             player.Cards.Add(card);
 
             form.Controls.Add(new PictureBox()
